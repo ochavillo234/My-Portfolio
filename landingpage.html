@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deo's Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: radial-gradient(circle at top left, #00111a, #000000);
+      overflow-x: hidden;
+    }
+
+    /* Cyberpunk neon glow */
+    .neon-text {
+      text-shadow: 
+        0 0 5px #00f7ff,
+        0 0 10px #00f7ff,
+        0 0 20px #00f7ff,
+        0 0 40px #ff00ff;
+    }
+
+    /* Navbar hover effect */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background: cyan;
+      transition: 0.3s;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="text-white">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full flex justify-between items-center px-10 py-5 z-50">
+    <!-- Profile + Name -->
+    <div class="flex items-center space-x-4">
+      <img src="your-profile.png" alt="Profile" class="w-14 h-14 rounded-full border-2 border-cyan-400 shadow-lg" />
+      <h1 class="text-2xl font-bold neon-text">Deo デオ</h1>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex space-x-8 text-lg font-medium">
+      <a href="#about" class="nav-link hover:text-cyan-400">About</a>
+      <a href="#projects" class="nav-link hover:text-cyan-400">Projects</a>
+      <a href="#skills" class="nav-link hover:text-cyan-400">Skills</a>
+      <a href="#contact" class="nav-link hover:text-cyan-400">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center">
+    <div class="text-center space-y-6">
+      <h2 class="text-5xl md:text-6xl font-extrabold neon-text">
+        Welcome to My Portfolio
+      </h2>
+      <p class="text-gray-300 text-lg max-w-xl mx-auto">
+        I create futuristic, high-tech websites and applications with style ✨
+      </p>
+      <a href="#projects" 
+         class="px-6 py-3 bg-cyan-500 text-black font-bold rounded-lg hover:bg-cyan-400 transition shadow-lg">
+        🚀 View My Work
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>
