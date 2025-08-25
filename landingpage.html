@@ -5,12 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deo's Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background: radial-gradient(circle at top left, #00111a, #000000);
-      overflow-x: hidden;
-    }
+  <script>
+  // If the user refreshes landingpage.html, send them back to animation
+  if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+    window.location.href = "index.html";
+  }
+</script>
 
+  <style>
+  html {
+    scroll-behavior: smooth; /* <-- this enables smooth scrolling */
+  }
+
+  body {
+    background: radial-gradient(circle at top left, #00111a, #000000);
+    overflow-x: hidden;
+  }
     /* Cyberpunk neon glow */
     .neon-text {
       text-shadow: 
@@ -38,42 +48,378 @@
     .nav-link:hover::after {
       width: 100%;
     }
+
+    /* Short intro text */
+    .intro-text {
+      font-family: 'Inter', sans-serif;
+      color: #cbd5e1; /* Tailwind gray-400 */
+      text-shadow: 0 0 1px #00f7ff, 0 0 2px #00f7ff;
+      text-align: center;
+      line-height: 1.6;
+      font-size: 14px;
+      max-width: 700px;
+    }
+
+    @media (min-width: 768px) {
+      .intro-text {
+        font-size: 16px;
+      }
+    }
+
+    .intro-text span {
+      text-shadow: 0 0 2px #00f7ff, 0 0 4px #00f7ff;
+      color: #00f7ff;
+      font-weight: 600;
+    }
+
+    /* Default is dark mode (already your body background) */
+body {
+  background: radial-gradient(circle at top left, #00111a, #000000);
+  color: white;
+  transition: background 0.5s, color 0.5s;
+}
+
+/* Light mode styles */
+.light body {
+  background: #f5f5f5;
+  color: #111;
+}
+
+/* Neon text changes for light mode */
+.light .neon-text {
+  text-shadow: 
+    0 0 5px #ff00ff,
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 40px #00f7ff;
+  color: #111;
+}
+
   </style>
 </head>
+
 <body class="text-white">
 
   <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full flex justify-between items-center px-10 py-5 z-50">
-    <!-- Profile + Name -->
-    <div class="flex items-center space-x-4">
-      <img src="your-profile.png" alt="Profile" class="w-14 h-14 rounded-full border-2 border-cyan-400 shadow-lg" />
-      <h1 class="text-2xl font-bold neon-text">Deo デオ</h1>
-    </div>
+  <header class="fixed top-0 left-0 w-full flex justify-between items-center px-10 py-5 z-50 bg-black/30 backdrop-blur-sm">
+  <!-- Profile + Name -->
+<div class="flex items-center space-x-4">
+  <button id="themeToggle" class="text-2xl font-bold neon-text transition-colors duration-300">
+    Deo デオ
+  </button>
+</div>
+
 
     <!-- Navigation Links -->
     <nav class="flex space-x-8 text-lg font-medium">
+      <a href="#home" class="nav-link hover:text-cyan-400">Home</a>
       <a href="#about" class="nav-link hover:text-cyan-400">About</a>
       <a href="#projects" class="nav-link hover:text-cyan-400">Projects</a>
       <a href="#skills" class="nav-link hover:text-cyan-400">Skills</a>
       <a href="#contact" class="nav-link hover:text-cyan-400">Contact</a>
+      <a href="#resume" class="nav-link hover:text-cyan-400">Resume</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="min-h-screen flex items-center justify-center">
-    <div class="text-center space-y-6">
-      <h2 class="text-5xl md:text-6xl font-extrabold neon-text">
-        Welcome to My Portfolio
-      </h2>
-      <p class="text-gray-300 text-lg max-w-xl mx-auto">
-        I create futuristic, high-tech websites and applications with style ✨
-      </p>
+  <section id="home" class="min-h-screen flex flex-col items-center justify-start pt-24 md:pt-28 space-y-6">
+    <!-- Profile Picture -->
+    <img src="Pictures/Deo.jpg" alt="Deo Profile" 
+         class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-cyan-500 shadow-lg object-cover">
+
+    <!-- Welcome Text -->
+    <h2 class="font-extrabold neon-text text-center px-4 md:px-0 text-3xl md:text-4xl">
+      Welcome to Deo デオ's Portfolio
+    </h2>
+
+    <!-- Short Intro / Tagline -->
+    <p class="intro-text">
+      <span>Hi, I’m Deo デオ</span> I build responsive and modern websites using HTML, CSS, Tailwind, JavaScript, and React.
+      I have worked on several projects, creating responsive and visually appealing web applications.
+      I enjoy experimenting with futuristic designs and bringing creative ideas to life through code.<br>
+    </p>
+
+    <!-- CTA Button + Social Links -->
+    <div class="flex flex-col items-center mt-4 space-y-4">
+      <!-- CTA Button -->
       <a href="#projects" 
          class="px-6 py-3 bg-cyan-500 text-black font-bold rounded-lg hover:bg-cyan-400 transition shadow-lg">
-        🚀 View My Work
+         View My Work
       </a>
+
+      <!-- Social Links -->
+      <div class="flex space-x-4">
+        <a href="https://www.facebook.com/dexterochavillooo/" target="_blank">
+          <img src="Pictures/fb.jpg" alt="Facebook" class="w-12 h-12 object-cover hover:scale-110 transition-transform">
+        </a>
+        <a href="https://www.instagram.com/d_eochavillo/" target="_blank">
+          <img src="Pictures/insta.jpg" alt="Instagram" class="w-12 h-12 object-cover hover:scale-110 transition-transform">
+        </a>
+        <a href="https://github.com/ochavillo234" target="_blank">
+          <img src="Pictures/github.jpg" alt="GitHub" class="w-12 h-12 object-cover hover:scale-110 transition-transform">
+        </a>
+      </div>
     </div>
+
   </section>
+
+<!-- About Section -->
+<section id="about" class="min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 md:pt-28 px-6 md:px-20 bg-black/90 relative overflow-hidden">
+
+  <!-- Left: Profile Picture -->
+  <div class="md:w-1/2 flex justify-center mb-12 md:mb-0 relative">
+    <div class="relative">
+      <img src="Pictures/Pana.jpg" alt="Deo Profile" class="w-64 h-64 md:w-72 md:h-72 rounded-full border-4 border-cyan-500 shadow-lg object-cover hover:scale-105 transition-transform">
+      <!-- Neon Circle Animation -->
+      <div class="absolute -inset-2 rounded-full border-2 border-cyan-400 animate-ping opacity-50"></div>
+      <div class="absolute -inset-4 rounded-full border-2 border-purple-500 animate-pulse opacity-30"></div>
+    </div>
+  </div>
+
+  <!-- Right: Boxes with Centered Heading -->
+  <div class="md:w-1/2 flex flex-col items-center">
+    <!-- Grid Container -->
+    <div class="grid grid-cols-2 gap-6 w-full max-w-3xl">
+      <!-- Heading spans two columns -->
+      <h2 class="col-span-2 text-[36px] font-extrabold neon-text text-center mb-4">About Me</h2>
+
+    <!-- Box 1: Who You Are -->
+<div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50">
+  <h3 class="text-[20px] font-bold neon-text mb-[8px] text-center">Who am I</h3>
+  <p class="text-gray-300 text-[14px] leading-[18px]">
+    Hi, I’m <span class="text-cyan-400 font-semibold">Dexter Ochavillo</span>. I have experience developing <span class="text-cyan-400 font-semibold">websites</span> and <span class="text-cyan-400 font-semibold">systems</span>. I’m still learning, but I enjoy the process, especially seeing the <span class="text-cyan-400 font-semibold">design</span> come together and the final website finished it’s very satisfying.
+  </p>
+</div>
+
+<!-- Box 2: Skills & Expertise -->
+<div class="backdrop-blur-md bg-white/5 border border-purple-400 rounded-2xl p-[16px] min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-purple-500/50">
+  <h3 class="text-[20px] font-bold neon-text mb-[8px] text-center">Skills & Expertise</h3>
+  <p class="text-gray-300 text-[13px] leading-[18px]">
+    When creating <span class="text-cyan-400 font-semibold">websites</span>, I use <span class="text-cyan-400 font-semibold">HTML, CSS, Tailwind, JavaScript, and React</span>. 
+    For <span class="text-cyan-400 font-semibold">systems</span>, I work with <span class="text-cyan-400 font-semibold">JavaScript, Java, and Python</span>, though I’m still improving my skills in some of these languages. 
+    For <span class="text-cyan-400 font-semibold">databases</span>, I use <span class="text-cyan-400 font-semibold">MySQL</span>.
+  </p>
+</div>
+
+<!-- Box 3: Hobbies & Interests -->
+<div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50">
+  <h3 class="text-[20px] font-bold neon-text mb-[8px] text-center">Hobbies & Interests</h3>
+  <p class="text-gray-300 text-[13px] leading-[15px]">
+    I have a lot of <span class="text-cyan-400 font-semibold">hobbies</span> and <span class="text-cyan-400 font-semibold">interests</span>. I enjoy <span class="text-cyan-400 font-semibold">listening to music</span>, watching <span class="text-cyan-400 font-semibold">movies</span>, <span class="text-cyan-400 font-semibold">dramas</span>, <span class="text-cyan-400 font-semibold">series</span>, and <span class="text-cyan-400 font-semibold">anime</span>, and reading <span class="text-cyan-400 font-semibold">manga</span>. 
+    I also love playing <span class="text-cyan-400 font-semibold">online games</span>, especially <span class="text-cyan-400 font-semibold">League of Legends</span>, although I’m currently stuck in <span class="text-cyan-400 font-semibold">Gold</span> because I’m not in my prime anymore but I still enjoy it. 
+    I also play <span class="text-cyan-400 font-semibold">Mobile Legends</span>, which is fun because I always get to play it with my <span class="text-cyan-400 font-semibold">girlfriend</span>.
+  </p>
+</div>
+
+<!-- Box 4: Learning & Growth -->
+<div class="backdrop-blur-md bg-white/5 border border-purple-400 rounded-2xl p-[16px] min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-purple-500/50">
+  <h3 class="text-[20px] font-bold neon-text mb-[8px] text-center">Learning & Growth</h3>
+  <p class="text-gray-300 text-[14px] leading-[16px]">
+    Although I have experience creating <span class="text-cyan-400 font-semibold">websites</span> using <span class="text-cyan-400 font-semibold">HTML, CSS, and Tailwind</span>, I’m still working to master languages like <span class="text-cyan-400 font-semibold">JavaScript, Python, and Java</span>. 
+    I’m eager to improve my <span class="text-cyan-400 font-semibold">skills</span> in these areas, explore <span class="text-cyan-400 font-semibold">new technologies</span>, and take on challenging <span class="text-cyan-400 font-semibold">projects</span> that help me grow as a <span class="text-cyan-400 font-semibold">developer</span>.
+  </p>
+</div>
+
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="min-h-screen flex flex-col items-center justify-center pt-24 md:pt-28 px-6 md:px-20 bg-black/90 relative overflow-hidden">
+
+  <!-- Section Heading -->
+  <h2 class="text-[36px] font-extrabold neon-text text-center mb-12">My Projects</h2>
+  <p class="text-gray-300 text-center max-w-3xl mb-12 text-[14px] leading-[20px]">
+  Here are some of the <span class="text-cyan-400 font-semibold">projects</span> I’ve worked on. Each project showcases my <span class="text-purple-400 font-semibold">skills in web development</span>, <span class="text-cyan-400 font-semibold">systems</span>, and <span class="text-purple-400 font-semibold">creative problem-solving</span>. 
+  Check out the <span class="text-cyan-400 font-semibold">live demos</span> or visit the <span class="text-purple-400 font-semibold">GitHub repositories</span> to explore more!
+</p>
+
+
+<!-- Projects Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+
+  <!-- Project 1 -->
+<div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+  <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+    <img src="Pictures/Onepiece.jpg" alt="Project Two" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+  </div>
+  <h3 class="text-[18px] font-bold neon-text mb-2 text-center">My First Time Creating HTML Project</h3>
+  <p class="text-[14px] leading-[18px] text-gray-300 text-center mb-4">
+    This was my very first project, created during my first year of college as a midterm project. I built it using HTML and CSS, which helped me gain hands-on experience in web development and design fundamentals.
+  </p>
+
+  <div class="flex gap-4">
+    <a href="https://github.com/ochavillo234/OnePiece" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+    <a href="https://ochavillo234.github.io/OnePiece/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+  </div>
+</div>
+
+<!-- Project 2 -->
+<div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+  <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+    <img src="Pictures/1stWeb.jpg" alt="Project One" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+  </div>
+  <h3 class="text-[18px] font-bold neon-text mb-2 text-center">My First Web Portfolio</h3>
+  <p class="text-[14px] leading-[18px] text-gray-300 text-center mb-4">
+    This is my first-ever portfolio, built using HTML and CSS. Creating it helped me understand the fundamentals of web design, organize content effectively, and gain practical experience in building and styling responsive web pages. It was a great starting point for my journey in web development.
+  </p>
+
+  <div class="flex gap-4">
+    <a href="https://github.com/ochavillo234/WebDex" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+    <a href="https://ochavillo234.github.io/WebDex/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+  </div>
+</div>
+
+
+  <!-- Project 3 -->
+  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+      <img src="Pictures/enrollment.jpg" alt="Project Three" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+    </div>
+    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Enrollment System</h3>
+    <p class="text-gray-300 text-[14px] leading-[18px] text-center mb-4">
+      A web-based enrollment for Cavite State University of Bacoor Campus system built using JavaScript, React, TailwindCSS, and Node.js. This system allows students to register, view available courses, and enroll in classes, while administrators can manage courses and monitor student enrollments
+    </p>
+    <div class="flex gap-4">
+      <a href="https://github.com/ochavillo234/ESG1" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+    </div>
+  </div>
+
+  <!-- Project 4 -->
+  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+      <img src="Pictures/2ndWeb.jpg" alt="Project Four" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+    </div>
+    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">My Second Web Portfolio</h3>
+    <p class="text-gray-300 text-[14px] leading-[18px] text-center mb-4">
+      This is my second web portfolio, created for our final semester project. It allowed me to test and showcase my improved skills since building my first portfolio. I built it using HTML, CSS, JavaScript, and TailwindCSS to create a responsive and modern web design.
+    </p>
+    <div class="flex gap-4">
+      <a href="https://github.com/ochavillo234/PortDeo" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+      <a href="https://ochavillo234.github.io/PortDeo/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+    </div>
+  </div>
+
+  <!-- Project 5 -->
+  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+      <img src="Pictures/Dodge.jpg" alt="Project Five" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+    </div>
+    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Dodge the Creeps</h3>
+    <p class="text-gray-300 text-[14px] leading-[18px] text-center mb-4">
+      Dodge the Creeps is a game I created as our final semester project using Godot. Despite having limited prior experience in game development, I successfully completed the project, which allowed me to learn and improve my skills significantly.
+    </p>
+    <div class="flex gap-4">
+      <a href="https://github.com/ochavillo234/Dodge-the-Creeps-" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+    </div>
+  </div>
+
+  <!-- Project 6 -->
+  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+      <img src="Pictures/project6.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+    </div>
+    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Curriculum Management System</h3>
+    <p class="text-gray-300 text-[13px] leading-[16px] text-center mb-4">
+      Curriculum Management System – Developed as our final semester project, this system streamlines the management and organization of academic curricula. Built using React, Node.js, TailwindCSS, and a database backend, it allows administrators to easily create, update, and monitor courses, while providing students with an intuitive interface to view curriculum details.
+    </p>
+    <div class="flex gap-4">
+      <a href="https://github.com/belle-designer/CMS" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+    </div>
+  </div>
+
+   <!-- Project 7 -->
+  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+      <img src="Pictures/project6.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+    </div>
+    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Ecommerce</h3>
+    <p class="text-gray-300 text-[12px] leading-[16px] text-center mb-4">
+      Developed as our final semester project, this web-based e-commerce platform allows users to browse products, add items to a cart, and complete purchases online. Built using React, Node.js, TailwindCSS, and a database backend, it features a responsive design, secure user authentication, and an admin panel for product and order management. This project demonstrates my skills in full-stack web development, UI/UX design, and e-commerce functionality.
+    </p>
+    <div class="flex gap-4">
+      <a href="https://github.com/ochavillo234/Ecommerce" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+      <a href="https://ochavillo234.github.io/PortDeo/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+    </div>
+  </div>
+
+   <!-- Project 8 -->
+  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+      <img src="Pictures/POS.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+    </div>
+    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Coffee Shop POS</h3>
+    <p class="text-gray-300 text-[14px] leading-[17px] text-center mb-4">
+      Developed as our final semester project, this web application simulates a coffee shop management system it allows users to browse menu items, place orders, and view order summaries, while administrators can manage products and track sales. This project highlights my skills in full-stack web development, responsive design, and user-friendly interface
+    </p>
+    <div class="flex gap-4">
+      <a href="https://github.com/ochavillo234/CoffeeShop_POS" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+  </div>
+</div>
+
+<!-- Project 9 -->
+  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+      <img src="Pictures/fiestahut.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+    </div>
+    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Fiesta Hut Enterprises</h3>
+    <p class="text-gray-300 text-[13px] leading-[18px] text-center mb-4">
+      I created this website for my company during my OJT, as they entrusted me to build an online platform to showcase their products. Developed using HTML, TailwindCSS, and JavaScript, the website features a responsive design, visually appealing layout, and user-friendly navigation, helping the company present their products effectively online.
+    </p>
+    <div class="flex gap-4">
+      <a href="https://github.com/ochavillo234/FiestaHut" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+      <a href="https://fiestahut.vercel.app/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+    </div>
+  </div>
+
+  <!-- Project 10 -->
+  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+      <img src="Pictures/3rdWeb.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+    </div>
+    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">My Thrird Web Portfolio</h3>
+    <p class="text-gray-300 text-[14px] leading-[17px] text-center mb-4">
+      This is my third web portfolio. It has been a while since I created my second portfolio, so I decided to build this one to see how much I have improved. I developed it with a high-tech design and advanced features, primarily for practice and experimentation, showcasing my growth in web development skills.
+    </p>
+    <div class="flex gap-4">
+      <a href="https://github.com/ochavillo234/My-Portfolio" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+      <a href="https://deoport.vercel.app/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+    </div>
+  </div>
+
+<!-- Switch -->
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlEl = document.documentElement;
+
+  // Define neon themes
+  const themes = [
+     { name: 'Original', bg: 'radial-gradient(circle at top left, #00111a, #000000)', text: '#ffffff', glow: '0 0 5px #00f7ff,0 0 10px #00f7ff,0 0 20px #00f7ff,0 0 40px #ff00ff' },
+    { name: 'Electric Purple', bg: '#1a001a', text: '#ff00ff', accent: '#00fff7', glow: '0 0 5px #ff00ff,0 0 10px #ff00ff,0 0 20px #00fff7' },
+    { name: 'Cyber Blue', bg: '#000022', text: '#00f7ff', accent: '#ff00ff', glow: '0 0 5px #00f7ff,0 0 10px #00f7ff,0 0 20px #ff00ff' },
+    { name: 'Dark Teal', bg: '#001a1a', text: '#00ffe0', accent: '#ff6600', glow: '0 0 5px #00ffe0,0 0 10px #00ffe0,0 0 20px #ff6600' },
+    { name: 'Electric Green', bg: '#001100', text: '#00ff00', accent: '#00ccff', glow: '0 0 5px #00ff00,0 0 10px #00ff00,0 0 20px #00ccff' },
+    { name: 'Magenta Purple', bg: '#1a001a', text: '#ff33ff', accent: '#9900ff', glow: '0 0 5px #ff33ff,0 0 10px #ff33ff,0 0 20px #9900ff' }
+  ];
+
+  let currentTheme = 0;
+
+  themeToggle.addEventListener('click', () => {
+    // Cycle to next theme
+    currentTheme = (currentTheme + 1) % themes.length;
+    const theme = themes[currentTheme];
+
+    // Apply background and text color to body
+    document.body.style.background = theme.bg;
+    document.body.style.color = theme.text;
+
+    // Update all neon-text elements
+    document.querySelectorAll('.neon-text').forEach(el => {
+      el.style.color = theme.text;
+      el.style.textShadow = theme.glow;
+    });
+
+    // Optional: update buttons or accents if needed
+  });
+</script>
 
 </body>
 </html>
