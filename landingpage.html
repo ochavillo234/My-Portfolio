@@ -97,126 +97,225 @@ body {
   <header class="fixed top-0 left-0 w-full flex justify-between items-center px-10 py-5 z-50 bg-black/30 backdrop-blur-sm">
   <!-- Profile + Name -->
 <div class="flex items-center space-x-4">
-  <button id="themeToggle" class="text-2xl font-bold neon-text transition-colors duration-300">
+  <button id="themeToggle" class="text-2xl font-bold neon-text transition-colors duration-300 flex items-center gap-2">
+    <span class="text-cyan-400 transform rotate-0">➤</span> <!-- points right -->
     Deo デオ
+    <span class="text-cyan-400 transform rotate-180">➤</span> <!-- points left -->
   </button>
 </div>
 
 
     <!-- Navigation Links -->
-    <nav class="flex space-x-8 text-lg font-medium">
+    <nav class="flex space-x-8 neon-text font-medium">
       <a href="#home" class="nav-link hover:text-cyan-400">Home</a>
       <a href="#about" class="nav-link hover:text-cyan-400">About</a>
       <a href="#projects" class="nav-link hover:text-cyan-400">Projects</a>
       <a href="#skills" class="nav-link hover:text-cyan-400">Skills</a>
-      <a href="#contact" class="nav-link hover:text-cyan-400">Contact</a>
       <a href="#resume" class="nav-link hover:text-cyan-400">Resume</a>
+      <a href="#contact" class="nav-link hover:text-cyan-400">Contact</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="min-h-screen flex flex-col items-center justify-start pt-24 md:pt-28 space-y-6">
-    <!-- Profile Picture -->
-    <img src="Pictures/Deo.jpg" alt="Deo Profile" 
-         class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-cyan-500 shadow-lg object-cover">
+<section id="home" class="relative min-h-screen flex flex-col items-center justify-start pt-24 md:pt-28 space-y-6 overflow-hidden">
+  
+  <!-- Background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black z-0">
+    <!-- Neon glow shapes -->
+    <div class="absolute w-96 h-96 bg-cyan-500 opacity-20 rounded-full top-1/4 left-1/3 blur-3xl animate-pulse-slow"></div>
+    <div class="absolute w-72 h-72 bg-pink-500 opacity-20 rounded-full bottom-1/4 right-1/4 blur-2xl animate-pulse-slow"></div>
+    <div class="absolute w-80 h-80 bg-purple-500 opacity-10 rounded-full top-1/2 right-1/2 blur-2xl animate-pulse-slower"></div>
+  </div>
 
-    <!-- Welcome Text -->
-    <h2 class="font-extrabold neon-text text-center px-4 md:px-0 text-3xl md:text-4xl">
-      Welcome to Deo デオ's Portfolio
-    </h2>
+  <!-- Profile Picture -->
+  <img src="Pictures/Deo.jpg" alt="Deo Profile" 
+       class="relative z-10 w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-cyan-500 shadow-lg object-cover">
 
-    <!-- Short Intro / Tagline -->
-    <p class="intro-text">
-      <span>Hi, I’m Deo デオ</span> I build responsive and modern websites using HTML, CSS, Tailwind, JavaScript, and React.
-      I have worked on several projects, creating responsive and visually appealing web applications.
-      I enjoy experimenting with futuristic designs and bringing creative ideas to life through code.<br>
-    </p>
+  <!-- Welcome Text -->
+  <h2 class="relative z-10 font-extrabold neon-text text-center px-4 md:px-0 text-3xl md:text-4xl">
+    Welcome to Deo デオ's Portfolio
+  </h2>
 
-    <!-- CTA Button + Social Links -->
-    <div class="flex flex-col items-center mt-4 space-y-4">
-      <!-- CTA Button -->
-      <a href="#projects" 
-         class="px-6 py-3 bg-cyan-500 text-black font-bold rounded-lg hover:bg-cyan-400 transition shadow-lg">
-         View My Work
+  <!-- Short Intro / Tagline -->
+  <p class="relative z-10 intro-text text-center max-w-2xl px-4 md:px-0">
+    <span>Hi, I’m Deo デオ</span> I build responsive and modern websites using HTML, CSS, Tailwind, JavaScript, and React.
+    I have worked on several projects, creating responsive and visually appealing web applications.
+    I enjoy experimenting with futuristic designs and bringing creative ideas to life through code.
+  </p>
+
+  <!-- CTA Button + Social Links -->
+  <div class="relative z-10 flex flex-col items-center mt-4 space-y-4">
+    <!-- CTA Button -->
+    <a href="#projects" 
+       class="px-6 py-3 bg-cyan-500 text-black font-bold rounded-lg hover:bg-cyan-400 transition shadow-lg">
+       View My Work
+    </a>
+
+    <!-- Social Links -->
+    <div class="flex space-x-4">
+      <a href="https://www.facebook.com/dexterochavillooo/" target="_blank">
+        <img src="Pictures/fb.jpg" alt="Facebook" class="w-12 h-12 object-cover hover:scale-110 transition-transform">
       </a>
-
-      <!-- Social Links -->
-      <div class="flex space-x-4">
-        <a href="https://www.facebook.com/dexterochavillooo/" target="_blank">
-          <img src="Pictures/fb.jpg" alt="Facebook" class="w-12 h-12 object-cover hover:scale-110 transition-transform">
-        </a>
-        <a href="https://www.instagram.com/d_eochavillo/" target="_blank">
-          <img src="Pictures/insta.jpg" alt="Instagram" class="w-12 h-12 object-cover hover:scale-110 transition-transform">
-        </a>
-        <a href="https://github.com/ochavillo234" target="_blank">
-          <img src="Pictures/github.jpg" alt="GitHub" class="w-12 h-12 object-cover hover:scale-110 transition-transform">
-        </a>
-      </div>
+      <a href="https://www.instagram.com/d_eochavillo/" target="_blank">
+        <img src="Pictures/insta.jpg" alt="Instagram" class="w-12 h-12 object-cover hover:scale-110 transition-transform">
+      </a>
+      <a href="https://github.com/ochavillo234" target="_blank">
+        <img src="Pictures/github.jpg" alt="GitHub" class="w-12 h-12 object-cover hover:scale-110 transition-transform">
+      </a>
     </div>
+  </div>
+</section>
 
-  </section>
+<style>
+  /* Custom animation for subtle neon pulse */
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50% { opacity: 0.25; transform: scale(1.05); }
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 6s infinite;
+  }
+  @keyframes pulse-slower {
+    0%, 100% { opacity: 0.1; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(1.03); }
+  }
+  .animate-pulse-slower {
+    animation: pulse-slower 10s infinite;
+  }
+</style>
+
 
 <!-- About Section -->
-<section id="about" class="min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 md:pt-28 px-6 md:px-20 bg-black/90 relative overflow-hidden">
+<section id="about" class="relative min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 md:pt-28 px-6 md:px-20 overflow-hidden bg-black">
+
+  <!-- Background: Neon Network -->
+  <canvas id="neon-network" class="absolute inset-0 z-0"></canvas>
 
   <!-- Left: Profile Picture -->
-  <div class="md:w-1/2 flex justify-center mb-12 md:mb-0 relative">
+  <div class="md:w-1/2 flex justify-center mb-12 md:mb-0 relative z-10">
     <div class="relative">
       <img src="Pictures/Pana.jpg" alt="Deo Profile" class="w-64 h-64 md:w-72 md:h-72 rounded-full border-4 border-cyan-500 shadow-lg object-cover hover:scale-105 transition-transform">
-      <!-- Neon Circle Animation -->
       <div class="absolute -inset-2 rounded-full border-2 border-cyan-400 animate-ping opacity-50"></div>
       <div class="absolute -inset-4 rounded-full border-2 border-purple-500 animate-pulse opacity-30"></div>
     </div>
   </div>
 
-  <!-- Right: Boxes with Centered Heading -->
-  <div class="md:w-1/2 flex flex-col items-center">
-    <!-- Grid Container -->
+  <!-- Right: Boxes -->
+  <div class="md:w-1/2 flex flex-col items-center relative z-10">
     <div class="grid grid-cols-2 gap-6 w-full max-w-3xl">
-      <!-- Heading spans two columns -->
       <h2 class="col-span-2 text-[36px] font-extrabold neon-text text-center mb-4">About Me</h2>
 
-    <!-- Box 1: Who You Are -->
-<div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50">
-  <h3 class="text-[20px] font-bold neon-text mb-[8px] text-center">Who am I</h3>
-  <p class="text-gray-300 text-[14px] leading-[18px]">
-    Hi, I’m <span class="text-cyan-400 font-semibold">Dexter Ochavillo</span>. I have experience developing <span class="text-cyan-400 font-semibold">websites</span> and <span class="text-cyan-400 font-semibold">systems</span>. I’m still learning, but I enjoy the process, especially seeing the <span class="text-cyan-400 font-semibold">design</span> come together and the final website finished it’s very satisfying.
-  </p>
-</div>
+      <!-- Box 1 -->
+      <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 neon-glow">
+        <h3 class="text-[20px] font-bold neon-text mb-2 text-center">Who am I</h3>
+        <p class="text-gray-300 text-[14px] leading-[18px]">Hi, I’m <span class="text-cyan-400 font-semibold">Dexter Ochavillo</span>…</p>
+      </div>
 
-<!-- Box 2: Skills & Expertise -->
-<div class="backdrop-blur-md bg-white/5 border border-purple-400 rounded-2xl p-[16px] min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-purple-500/50">
-  <h3 class="text-[20px] font-bold neon-text mb-[8px] text-center">Skills & Expertise</h3>
-  <p class="text-gray-300 text-[13px] leading-[18px]">
-    When creating <span class="text-cyan-400 font-semibold">websites</span>, I use <span class="text-cyan-400 font-semibold">HTML, CSS, Tailwind, JavaScript, and React</span>. 
-    For <span class="text-cyan-400 font-semibold">systems</span>, I work with <span class="text-cyan-400 font-semibold">JavaScript, Java, and Python</span>, though I’m still improving my skills in some of these languages. 
-    For <span class="text-cyan-400 font-semibold">databases</span>, I use <span class="text-cyan-400 font-semibold">MySQL</span>.
-  </p>
-</div>
+      <!-- Box 2 -->
+      <div class="backdrop-blur-md bg-white/5 border border-purple-400 rounded-2xl p-4 min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-purple-500/50 neon-glow">
+        <h3 class="text-[20px] font-bold neon-text mb-2 text-center">Skills & Expertise</h3>
+        <p class="text-gray-300 text-[13px] leading-[18px]">I use <span class="text-cyan-400 font-semibold">HTML, CSS, Tailwind…</span></p>
+      </div>
 
-<!-- Box 3: Hobbies & Interests -->
-<div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50">
-  <h3 class="text-[20px] font-bold neon-text mb-[8px] text-center">Hobbies & Interests</h3>
-  <p class="text-gray-300 text-[13px] leading-[15px]">
-    I have a lot of <span class="text-cyan-400 font-semibold">hobbies</span> and <span class="text-cyan-400 font-semibold">interests</span>. I enjoy <span class="text-cyan-400 font-semibold">listening to music</span>, watching <span class="text-cyan-400 font-semibold">movies</span>, <span class="text-cyan-400 font-semibold">dramas</span>, <span class="text-cyan-400 font-semibold">series</span>, and <span class="text-cyan-400 font-semibold">anime</span>, and reading <span class="text-cyan-400 font-semibold">manga</span>. 
-    I also love playing <span class="text-cyan-400 font-semibold">online games</span>, especially <span class="text-cyan-400 font-semibold">League of Legends</span>, although I’m currently stuck in <span class="text-cyan-400 font-semibold">Gold</span> because I’m not in my prime anymore but I still enjoy it. 
-    I also play <span class="text-cyan-400 font-semibold">Mobile Legends</span>, which is fun because I always get to play it with my <span class="text-cyan-400 font-semibold">girlfriend</span>.
-  </p>
-</div>
+      <!-- Box 3 -->
+      <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 neon-glow">
+        <h3 class="text-[20px] font-bold neon-text mb-2 text-center">Hobbies & Interests</h3>
+        <p class="text-gray-300 text-[13px] leading-[15px]">I enjoy <span class="text-cyan-400 font-semibold">music, games…</span></p>
+      </div>
 
-<!-- Box 4: Learning & Growth -->
-<div class="backdrop-blur-md bg-white/5 border border-purple-400 rounded-2xl p-[16px] min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-purple-500/50">
-  <h3 class="text-[20px] font-bold neon-text mb-[8px] text-center">Learning & Growth</h3>
-  <p class="text-gray-300 text-[14px] leading-[16px]">
-    Although I have experience creating <span class="text-cyan-400 font-semibold">websites</span> using <span class="text-cyan-400 font-semibold">HTML, CSS, and Tailwind</span>, I’m still working to master languages like <span class="text-cyan-400 font-semibold">JavaScript, Python, and Java</span>. 
-    I’m eager to improve my <span class="text-cyan-400 font-semibold">skills</span> in these areas, explore <span class="text-cyan-400 font-semibold">new technologies</span>, and take on challenging <span class="text-cyan-400 font-semibold">projects</span> that help me grow as a <span class="text-cyan-400 font-semibold">developer</span>.
-  </p>
-</div>
+      <!-- Box 4 -->
+      <div class="backdrop-blur-md bg-white/5 border border-purple-400 rounded-2xl p-4 min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-purple-500/50 neon-glow">
+        <h3 class="text-[20px] font-bold neon-text mb-2 text-center">Learning & Growth</h3>
+        <p class="text-gray-300 text-[14px] leading-[16px]">I’m improving in <span class="text-cyan-400 font-semibold">JavaScript, Python…</span></p>
+      </div>
+    </div>
+  </div>
 
 </section>
 
+<style>
+  .neon-glow {
+    box-shadow: 0 0 10px rgba(0,255,255,0.5), 0 0 20px rgba(255,0,255,0.2);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  .neon-glow:hover {
+    box-shadow: 0 0 20px rgba(0,255,255,0.8), 0 0 30px rgba(255,0,255,0.4);
+  }
+</style>
+
+<script>
+  const canvas = document.getElementById('neon-network');
+  const ctx = canvas.getContext('2d');
+  let nodes = [];
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initNodes();
+  }
+
+  function initNodes() {
+    nodes = [];
+    for (let i = 0; i < 80; i++) { // number of nodes
+      nodes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: Math.random() * 2 + 1,
+        color: ['#00FFFF','#FF00FF','#FF00CC','#00FFAA'][Math.floor(Math.random()*4)]
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    // Draw lines
+    for (let i=0;i<nodes.length;i++){
+      for (let j=i+1;j<nodes.length;j++){
+        let dx = nodes[i].x - nodes[j].x;
+        let dy = nodes[i].y - nodes[j].y;
+        let dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < 120){
+          ctx.strokeStyle = `rgba(0,255,255,${1 - dist/120})`;
+          ctx.lineWidth = 0.5;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw nodes
+    nodes.forEach(n => {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.radius, 0, Math.PI*2);
+      ctx.fillStyle = n.color;
+      ctx.fill();
+      n.x += n.vx;
+      n.y += n.vy;
+
+      // bounce off edges
+      if(n.x < 0 || n.x > canvas.width) n.vx *= -1;
+      if(n.y < 0 || n.y > canvas.height) n.vy *= -1;
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+  draw();
+</script>
+
 <!-- Projects Section -->
-<section id="projects" class="min-h-screen flex flex-col items-center justify-center pt-24 md:pt-28 px-6 md:px-20 bg-black/90 relative overflow-hidden">
+<section id="projects" class="min-h-screen flex flex-col items-center justify-center pt-24 md:pt-28 px-6 md:px-20 bg-black/90 relative z-0 overflow-hidden">
+
+
+    <!-- Background Canvas -->
+  <canvas id="neon-network" class="fixed top-0 left-0 w-screen h-screen -z-10"></canvas>
 
   <!-- Section Heading -->
   <h2 class="text-[36px] font-extrabold neon-text text-center mb-12">My Projects</h2>
@@ -382,187 +481,294 @@ body {
 
 
 <!-- ================= SKILLS SECTION ================= -->
-<section id="skills" class="py-28 mt-52 text-center relative">
+<section id="skills" class="py-28 mt-52 text-center relative overflow-hidden">
+
+  <!-- Canvas for animated background -->
+  <canvas id="skills-bg" class="absolute inset-0 -z-10 w-full h-full"></canvas>
+
   <h2 class="text-4xl font-bold mb-16 neon-text">My Skills</h2>
 
   <div class="max-w-5xl mx-auto px-6 space-y-20">
 
-<!-- Frontend -->
-<div>
-  <h3 class="text-2xl font-semibold neon-text mb-10 text-center">FRONTEND DEVELOPMENT</h3>
-  <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
-    <div class="w-36">
-      <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
-        <img src="Pictures/Html.jpg" alt="HTML" class="w-full h-full object-cover">
+    <!-- Frontend -->
+    <div>
+      <h3 class="text-2xl font-semibold neon-text mb-10 text-center">FRONTEND DEVELOPMENT</h3>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <div class="w-36">
+          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+            <img src="Pictures/Html.jpg" alt="HTML" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">HTML</p>
+        </div>
+        <div class="w-36">
+          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+            <img src="Pictures/css.jpg" alt="CSS" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">CSS</p>
+        </div>
+        <div class="w-36">
+          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+            <img src="Pictures/js.jpg" alt="JavaScript" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">JavaScript</p>
+        </div>
+        <div class="w-36">
+          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+            <img src="Pictures/react.jpg" alt="React" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">React</p>
+        </div>
+        <div class="w-36">
+          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+            <img src="Pictures/tailwind.jpg" alt="Tailwind" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">Tailwind</p>
+        </div>
       </div>
-      <p class="text-sm mt-2 text-center neon-text">HTML</p>
     </div>
-    <div class="w-36">
-      <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
-        <img src="Pictures/css.jpg" alt="CSS" class="w-full h-full object-cover">
+
+    <!-- Backend -->
+    <div>
+      <h3 class="text-2xl font-semibold neon-text mb-10 text-center">BACKEND DEVELOPMENT</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="w-36">
+          <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+            <img src="Pictures/node.jpg" alt="Node.js" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">Node.js</p>
+        </div>
+        <div class="w-36">
+          <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+            <img src="Pictures/express.jpg" alt="Express" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">Express</p>
+        </div>
+        <div class="w-36">
+          <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+            <img src="Pictures/js.jpg" alt="JavaScript" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">JavaScript</p>
+        </div>
+        <div class="w-36">
+          <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+            <img src="Pictures/python.jpg" alt="Python" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">Python</p>
+        </div>
       </div>
-      <p class="text-sm mt-2 text-center neon-text">CSS</p>
     </div>
-    <div class="w-36">
-      <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
-        <img src="Pictures/js.jpg" alt="JavaScript" class="w-full h-full object-cover">
+
+    <!-- Database -->
+    <div>
+      <h3 class="text-2xl font-semibold neon-text mb-10 text-center">DATABASE</h3>
+      <div class="flex justify-center gap-6">
+        <div class="w-36">
+          <div class="bg-black/40 border border-pink-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+            <img src="Pictures/sqll.jpg" alt="MySQL" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">MySQL</p>
+        </div>
+        <div class="w-36">
+          <div class="bg-black/40 border border-pink-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+            <img src="Pictures/db.jpg" alt="MongoDB" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">MongoDB</p>
+        </div>
       </div>
-      <p class="text-sm mt-2 text-center neon-text">JavaScript</p>
     </div>
-    <div class="w-36">
-      <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
-        <img src="Pictures/react.jpg" alt="React" class="w-full h-full object-cover">
+
+    <!-- Soft Skills -->
+    <div>
+      <h3 class="text-2xl font-semibold neon-text mb-10 text-center">SOFT SKILLS</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center mx-auto max-w-6xl">
+        <!-- Row 1 -->
+        <div class="w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+            <img src="Pictures/Problem Solving.png" alt="Problem-Solving" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">Problem-Solving</p>
+        </div>
+
+        <div class="w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+            <img src="Pictures/Team Workk.png" alt="Teamwork" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">Teamwork</p>
+        </div>
+
+        <div class="w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+            <img src="Pictures/Adapt.png" alt="Adaptability" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">Adaptability</p>
+        </div>
+
+        <div class="w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+            <img src="Pictures/Creat.png" alt="Creativity" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">Creativity</p>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+            <img src="Pictures/Speech.png" alt="Communication" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">Communication</p>
+        </div>
+
+        <div class="w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+            <img src="Pictures/Leader.png" alt="Leadership" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">Leadership</p>
+        </div>
+
+        <div class="w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+            <img src="Pictures/Time.png" alt="Time Management" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">Time Management</p>
+        </div>
+
+        <div class="w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+            <img src="Pictures/Multi.png" alt="Multitasking" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">Multitasking</p>
+        </div>
       </div>
-      <p class="text-sm mt-2 text-center neon-text">React</p>
     </div>
-    <div class="w-36">
-      <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
-        <img src="Pictures/tailwind.jpg" alt="Tailwind" class="w-full h-full object-cover">
+
+    <!-- Gaming Skills -->
+    <div>
+      <h3 class="text-2xl font-semibold neon-text mb-10 text-center">GAMING HIGHLIGHTS<br>(Click it)</h3>
+      <div class="flex justify-center gap-8 flex-wrap">
+        <!-- League of Legends -->
+        <div class="w-44 cursor-pointer" onclick="openHighlights('lol')">
+          <div class="bg-black/40 border border-yellow-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+            <img src="Pictures/lol.jpg" alt="League of Legends" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">League of Legends</p>
+        </div>
+
+        <!-- Mobile Legends -->
+        <div class="w-44 cursor-pointer" onclick="openHighlights('ml')">
+          <div class="bg-black/40 border border-yellow-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+            <img src="Pictures/ml.jpg" alt="Mobile Legends" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm mt-2 text-center neon-text">Mobile Legends</p>
+        </div>
       </div>
-      <p class="text-sm mt-2 text-center neon-text">Tailwind</p>
     </div>
+
   </div>
-</div>
+</section>
 
-<!-- Backend -->
-<div>
-  <h3 class="text-2xl font-semibold neon-text mb-10 text-center">BACKEND DEVELOPMENT</h3>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-    <div class="w-36">
-      <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
-        <img src="Pictures/node.jpg" alt="Node.js" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">Node.js</p>
-    </div>
-    <div class="w-36">
-      <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
-        <img src="Pictures/express.jpg" alt="Express" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">Express</p>
-    </div>
-    <div class="w-36">
-      <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
-        <img src="Pictures/js.jpg" alt="JavaScript" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">JavaScript</p>
-    </div>
-    <div class="w-36">
-      <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
-        <img src="Pictures/python.jpg" alt="Python" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">Python</p>
-    </div>
-  </div>
-</div>
+<script>
+const skillsCanvas = document.getElementById('skills-bg');
+const skillsCtx = skillsCanvas.getContext('2d');
 
-<!-- Database -->
-<div>
-  <h3 class="text-2xl font-semibold neon-text mb-10 text-center">DATABASE</h3>
-  <div class="flex justify-center gap-6">
-    <div class="w-36">
-      <div class="bg-black/40 border border-pink-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
-        <img src="Pictures/sqll.jpg" alt="MySQL" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">MySQL</p>
-    </div>
-    <div class="w-36">
-      <div class="bg-black/40 border border-pink-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
-        <img src="Pictures/db.jpg" alt="MongoDB" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">MongoDB</p>
-    </div>
-  </div>
-</div>
+// Set canvas full size
+function resizeSkillsCanvas() {
+  skillsCanvas.width = skillsCanvas.offsetWidth;
+  skillsCanvas.height = skillsCanvas.offsetHeight;
+}
+window.addEventListener('resize', resizeSkillsCanvas);
+resizeSkillsCanvas();
 
-<!-- Soft Skills -->
-<div>
-  <h3 class="text-2xl font-semibold neon-text mb-10 text-center">SOFT SKILLS</h3>
-  
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center mx-auto max-w-6xl">
-    <!-- Row 1 -->
-    <div class="w-44">
-      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
-        <img src="Pictures/Problem Solving.png" alt="Problem-Solving" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">Problem-Solving</p>
-    </div>
+// Particle class
+class SkillParticle {
+  constructor() {
+    this.initialize();
+  }
 
-    <div class="w-44">
-      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
-        <img src="Pictures/Team Workk.png" alt="Teamwork" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">Teamwork</p>
-    </div>
+  initialize() {
+    this.posX = Math.random() * skillsCanvas.width;
+    this.posY = Math.random() * skillsCanvas.height;
+    this.radius = Math.random() * 3 + 1;
+    this.maxRadius = this.radius + Math.random() * 3;
+    this.minRadius = this.radius / 2;
+    this.velX = (Math.random() - 0.5) * 0.3;
+    this.velY = (Math.random() - 0.5) * 0.3;
+    this.pulseSpeed = Math.random() * 0.05 + 0.02;
+    this.expanding = true;
+    this.glowColor = `hsl(${Math.random() * 360}, 100%, ${50 + Math.random() * 30}%)`;
+  }
 
-    <div class="w-44">
-      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
-        <img src="Pictures/Adapt.png" alt="Adaptability" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">Adaptability</p>
-    </div>
+  move() {
+    this.posX += this.velX;
+    this.posY += this.velY;
 
-    <div class="w-44">
-      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
-        <img src="Pictures/Creat.png" alt="Creativity" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">Creativity</p>
-    </div>
+    // Wrap around edges
+    if (this.posX > skillsCanvas.width) this.posX = 0;
+    if (this.posX < 0) this.posX = skillsCanvas.width;
+    if (this.posY > skillsCanvas.height) this.posY = 0;
+    if (this.posY < 0) this.posY = skillsCanvas.height;
 
-    <!-- Row 2 -->
-    <div class="w-44">
-      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
-        <img src="Pictures/Speech.png" alt="Communication" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">Communication</p>
-    </div>
+    // Pulsing effect
+    if (this.expanding) {
+      this.radius += this.pulseSpeed;
+      if (this.radius >= this.maxRadius) this.expanding = false;
+    } else {
+      this.radius -= this.pulseSpeed;
+      if (this.radius <= this.minRadius) this.expanding = true;
+    }
+  }
 
-    <div class="w-44">
-      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
-        <img src="Pictures/Leader.png" alt="Leadership" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">Leadership</p>
-    </div>
+  draw() {
+    skillsCtx.beginPath();
+    skillsCtx.arc(this.posX, this.posY, this.radius, 0, Math.PI * 2);
+    skillsCtx.fillStyle = this.glowColor;
+    skillsCtx.shadowBlur = 10;
+    skillsCtx.shadowColor = this.glowColor;
+    skillsCtx.fill();
+  }
+}
 
-    <div class="w-44">
-      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
-        <img src="Pictures/Time.png" alt="Time Management" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">Time Management</p>
-    </div>
+// Create particles
+const skillParticlesArray = [];
+const TOTAL_SKILL_PARTICLES = 120; // Adjust for performance
+for (let i = 0; i < TOTAL_SKILL_PARTICLES; i++) {
+  skillParticlesArray.push(new SkillParticle());
+}
 
-    <div class="w-44">
-      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
-        <img src="Pictures/Multi.png" alt="Multitasking" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">Multitasking</p>
-    </div>
-  </div>
-</div>
+// Draw connecting lines
+function connectSkillParticles() {
+  for (let i = 0; i < skillParticlesArray.length; i++) {
+    for (let j = i + 1; j < skillParticlesArray.length; j++) {
+      let dx = skillParticlesArray[i].posX - skillParticlesArray[j].posX;
+      let dy = skillParticlesArray[i].posY - skillParticlesArray[j].posY;
+      let distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < 100) {
+        skillsCtx.strokeStyle = `rgba(0,255,255,${1 - distance/100})`;
+        skillsCtx.lineWidth = 0.5;
+        skillsCtx.beginPath();
+        skillsCtx.moveTo(skillParticlesArray[i].posX, skillParticlesArray[i].posY);
+        skillsCtx.lineTo(skillParticlesArray[j].posX, skillParticlesArray[j].posY);
+        skillsCtx.stroke();
+      }
+    }
+  }
+}
 
+// Animation loop
+function animateSkillParticles() {
+  skillsCtx.clearRect(0, 0, skillsCanvas.width, skillsCanvas.height);
 
+  skillParticlesArray.forEach(p => {
+    p.move();
+    p.draw();
+  });
 
-<!-- Gaming Skills -->
-<div>
-  <h3 class="text-2xl font-semibold neon-text mb-10 text-center">GAMING HIGHLIGHTS<br>(Click it)</h3>
-  
-  <div class="flex justify-center gap-8 flex-wrap">
-    <!-- League of Legends -->
-    <div class="w-44 cursor-pointer" onclick="openHighlights('lol')">
-      <div class="bg-black/40 border border-yellow-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
-        <img src="Pictures/lol.jpg" alt="League of Legends" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">League of Legends</p>
-    </div>
+  connectSkillParticles();
 
-    <!-- Mobile Legends -->
-    <div class="w-44 cursor-pointer" onclick="openHighlights('ml')">
-      <div class="bg-black/40 border border-yellow-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
-        <img src="Pictures/ml.jpg" alt="Mobile Legends" class="w-full h-full object-cover">
-      </div>
-      <p class="text-sm mt-2 text-center neon-text">Mobile Legends</p>
-    </div>
-  </div>
-</div>
+  requestAnimationFrame(animateSkillParticles);
+}
+
+animateSkillParticles();
+</script>
 
 <!-- Highlights Modal -->
 <div id="highlights-modal" class="hidden fixed inset-0 bg-black/80 flex justify-center items-center z-50">
@@ -648,7 +854,159 @@ body {
 </section>
 
 
-<!-- ===================== CONTACT ===================== -->
+<!-- ===================== RESUME ===================== -->
+<section id="resume" class="pt-32 pb-16 flex justify-center relative">
+  <div class="bg-black/40 border border-cyan-400 rounded-2xl p-8 shadow-neon max-w-md w-full text-center">
+    
+    <!-- Resume Label -->
+    <p class="text-gray-300 mb-4 text-lg font-semibold">Want to view or download my resume?</p>
+    
+    <!-- Resume Button -->
+    <a href="Pictures/Dexter Resume.pdf" download class="inline-block px-8 py-3 bg-black/80 border border-cyan-400 text-cyan-400 font-bold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 neon-button">
+      Download Resume
+    </a>
+    
+    <!-- Description -->
+    <p class="text-gray-400 mt-4 text-sm">Click the button above to download my resume in PDF format.</p>
+  </div>
+</section>
+
+<!-- Neon Glow CSS -->
+<style>
+  .neon-button {
+    box-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #00fff7;
+    transition: all 0.3s ease-in-out;
+  }
+  .neon-button:hover {
+    box-shadow: 0 0 15px #00fff7, 0 0 30px #00fff7, 0 0 45px #00fff7;
+  }
+  .shadow-neon {
+    box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 30px #00fff7;
+  }
+</style>
+
+<script>
+const resumeCanvas = document.createElement('canvas');
+resumeCanvas.id = 'resume-bg';
+resumeCanvas.style.position = 'absolute';
+resumeCanvas.style.top = '0';
+resumeCanvas.style.left = '0';
+resumeCanvas.style.width = '100%';
+resumeCanvas.style.height = '100%';
+resumeCanvas.style.zIndex = '-10';
+resumeCanvas.style.pointerEvents = 'none';
+document.querySelector('#resume').appendChild(resumeCanvas);
+
+const resumeCtx = resumeCanvas.getContext('2d');
+
+function resizeResumeCanvas() {
+  resumeCanvas.width = resumeCanvas.offsetWidth;
+  resumeCanvas.height = resumeCanvas.offsetHeight;
+}
+window.addEventListener('resize', resizeResumeCanvas);
+resizeResumeCanvas();
+
+// Floating particle class
+class ResumeParticle {
+  constructor() {
+    this.spawn();
+  }
+
+  spawn() {
+    this.rx = Math.random() * resumeCanvas.width;
+    this.ry = Math.random() * resumeCanvas.height;
+    this.radius = Math.random() * 2 + 1;
+    this.maxRadius = this.radius + Math.random() * 2;
+    this.minRadius = this.radius / 2;
+    this.velX = (Math.random() - 0.5) * 0.2;
+    this.velY = (Math.random() - 0.5) * 0.2;
+    this.pulseSpeed = Math.random() * 0.03 + 0.01;
+    this.expanding = true;
+    this.color = `hsl(${200 + Math.random() * 60}, 100%, ${50 + Math.random() * 25}%)`; // Cyan-purple tones
+    this.angle = Math.random() * Math.PI * 2; // For wavy motion
+    this.waveSpeed = Math.random() * 0.03 + 0.01;
+  }
+
+  update() {
+    // Float
+    this.rx += this.velX + Math.sin(this.angle) * 0.5;
+    this.ry += this.velY + Math.cos(this.angle) * 0.5;
+    this.angle += this.waveSpeed;
+
+    // Wrap edges
+    if (this.rx > resumeCanvas.width) this.rx = 0;
+    if (this.rx < 0) this.rx = resumeCanvas.width;
+    if (this.ry > resumeCanvas.height) this.ry = 0;
+    if (this.ry < 0) this.ry = resumeCanvas.height;
+
+    // Pulsing
+    if (this.expanding) {
+      this.radius += this.pulseSpeed;
+      if (this.radius >= this.maxRadius) this.expanding = false;
+    } else {
+      this.radius -= this.pulseSpeed;
+      if (this.radius <= this.minRadius) this.expanding = true;
+    }
+  }
+
+  draw() {
+    resumeCtx.beginPath();
+    resumeCtx.arc(this.rx, this.ry, this.radius, 0, Math.PI * 2);
+    resumeCtx.fillStyle = this.color;
+    resumeCtx.shadowBlur = 8;
+    resumeCtx.shadowColor = this.color;
+    resumeCtx.fill();
+  }
+}
+
+// Create particles
+const resumeParticlesArray = [];
+const RESUME_PARTICLE_COUNT = 100;
+for (let i = 0; i < RESUME_PARTICLE_COUNT; i++) {
+  resumeParticlesArray.push(new ResumeParticle());
+}
+
+// Draw connecting wavy lines
+function drawResumeConnections() {
+  for (let i = 0; i < resumeParticlesArray.length; i++) {
+    for (let j = i + 1; j < resumeParticlesArray.length; j++) {
+      let dx = resumeParticlesArray[i].rx - resumeParticlesArray[j].rx;
+      let dy = resumeParticlesArray[i].ry - resumeParticlesArray[j].ry;
+      let distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < 120) {
+        resumeCtx.strokeStyle = `rgba(100,255,255,${1 - distance/120})`;
+        resumeCtx.lineWidth = 0.4;
+        resumeCtx.beginPath();
+        resumeCtx.moveTo(resumeParticlesArray[i].rx, resumeParticlesArray[i].ry);
+        resumeCtx.lineTo(resumeParticlesArray[j].rx, resumeParticlesArray[j].ry);
+        resumeCtx.stroke();
+      }
+    }
+  }
+}
+
+// Animation loop
+function animateResumeBG() {
+  resumeCtx.clearRect(0, 0, resumeCanvas.width, resumeCanvas.height);
+
+  resumeParticlesArray.forEach(p => {
+    p.update();
+    p.draw();
+  });
+
+  drawResumeConnections();
+
+  requestAnimationFrame(animateResumeBG);
+}
+
+animateResumeBG();
+</script>
+
+
+
+
+  <!-- ===================== CONTACT ===================== -->
+  
 <section id="contact" class="py-16">
   <h3 class="text-2xl font-semibold neon-text mb-10 text-center">CONTACT ME</h3>
 
@@ -720,83 +1078,285 @@ body {
 
     </div>
 
+    
 
-    <!-- Contact Form -->
-    <div class="bg-black/40 border border-cyan-400 rounded-2xl p-6 shadow-lg">
-      <h4 class="text-lg font-semibold neon-text mb-4 text-center md:text-left">Send a message</h4>
+<!-- Contact Form -->
+<div class="bg-black/40 border border-cyan-400 rounded-2xl p-6 shadow-lg">
+  <h4 class="text-lg font-semibold neon-text mb-4 text-center">Send a message</h4>
 
-      <!-- Replace the action URL with your Formspree endpoint: https://formspree.io/f/xxxxxxx -->
-      <form id="contact-form" class="space-y-4">
-        <!-- Honeypot field (anti-spam) -->
-        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
 
-        <div>
-          <label class="block text-sm text-gray-300 mb-1" for="name">Your Name</label>
-          <input id="name" name="name" type="text" required
-                 class="w-full p-3 rounded-lg bg-black/40 border border-cyan-400 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/60">
-        </div>
-
-        <div>
-          <label class="block text-sm text-gray-300 mb-1" for="email">Your Email</label>
-          <input id="email" name="email" type="email" required
-                 class="w-full p-3 rounded-lg bg-black/40 border border-cyan-400 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/60">
-        </div>
-
-        <div>
-          <label class="block text-sm text-gray-300 mb-1" for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required
-                    class="w-full p-3 rounded-lg bg-black/40 border border-cyan-400 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/60"></textarea>
-        </div>
-
-        <button type="submit"
-                class="w-full bg-cyan-500 text-black font-semibold py-2 rounded-lg hover:bg-cyan-400 transition">
-          Send
-        </button>
-
-        <!-- Status messages -->
-        <p id="form-status" class="text-sm mt-2 text-center hidden"></p>
-      </form>
+  <form id="contact-form" class="space-y-4">
+    <div>
+      <label class="block text-sm text-gray-300 mb-1" for="name">Your Name</label>
+      <input id="name" name="name" type="text" required
+             class="w-full p-3 rounded-lg bg-black/40 border border-cyan-400 text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/60 neon-input"
+             placeholder="Type your name...">
     </div>
-  </div>
-</section>
 
+    <div>
+      <label class="block text-sm text-gray-300 mb-1" for="email">Your Email</label>
+      <input id="email" name="email" type="email" required
+             class="w-full p-3 rounded-lg bg-black/40 border border-cyan-400 text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/60 neon-input"
+             placeholder="Type your email...">
+    </div>
+
+    <div>
+      <label class="block text-sm text-gray-300 mb-1" for="message">Message</label>
+      <textarea id="message" name="message" rows="4" required
+                class="w-full p-3 rounded-lg bg-black/40 border border-cyan-400 text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/60 neon-input"
+                placeholder="Type your message..."></textarea>
+    </div>
+
+    <button type="submit"
+            class="w-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-bold py-2 rounded-lg shadow-lg hover:from-blue-500 hover:to-cyan-400 hover:scale-105 transition-all duration-300">
+      Send Message 
+    </button>
+
+    <script>
+// Create canvas for Contact section
+const galaxyCanvas = document.createElement('canvas');
+galaxyCanvas.id = 'galaxy-bg';
+galaxyCanvas.style.position = 'absolute';
+galaxyCanvas.style.top = '0';
+galaxyCanvas.style.left = '0';
+galaxyCanvas.style.width = '100%';
+galaxyCanvas.style.height = '100%';
+galaxyCanvas.style.zIndex = '-10';
+galaxyCanvas.style.pointerEvents = 'none';
+document.querySelector('#contact').style.position = 'relative';
+document.querySelector('#contact').appendChild(galaxyCanvas);
+
+const galaxyCtx = galaxyCanvas.getContext('2d');
+
+// Resize canvas
+function resizeGalaxyCanvas() {
+  galaxyCanvas.width = galaxyCanvas.offsetWidth;
+  galaxyCanvas.height = galaxyCanvas.offsetHeight;
+}
+window.addEventListener('resize', resizeGalaxyCanvas);
+resizeGalaxyCanvas();
+
+// Galaxy star class
+class GalaxyStar {
+  constructor() {
+    this.cx = galaxyCanvas.width / 2;
+    this.cy = galaxyCanvas.height / 2;
+    this.orbitRadius = Math.random() * (galaxyCanvas.width/2.2) + 20;
+    this.angle = Math.random() * Math.PI * 2;
+    this.size = Math.random() * 2 + 1;
+    this.twinkleSpeed = Math.random() * 0.03 + 0.01;
+    this.twinkleDirection = Math.random() > 0.5 ? 1 : -1;
+    this.colorHue = 180 + Math.random()*100; // cyan-purple range
+    this.orbitSpeed = Math.random() * 0.002 + 0.001;
+  }
+
+  update() {
+    this.angle += this.orbitSpeed;
+    this.size += this.twinkleSpeed * this.twinkleDirection;
+    if (this.size > 3 || this.size < 0.5) this.twinkleDirection *= -1;
+  }
+
+  draw() {
+    const x = this.cx + Math.cos(this.angle) * this.orbitRadius;
+    const y = this.cy + Math.sin(this.angle) * this.orbitRadius;
+    galaxyCtx.beginPath();
+    galaxyCtx.arc(x, y, this.size, 0, Math.PI * 2);
+    galaxyCtx.fillStyle = `hsl(${this.colorHue}, 100%, 60%)`;
+    galaxyCtx.shadowBlur = 10;
+    galaxyCtx.shadowColor = `hsl(${this.colorHue}, 100%, 60%)`;
+    galaxyCtx.fill();
+  }
+}
+
+// Create stars
+const galaxyStars = [];
+const GALAXY_STAR_COUNT = 120;
+for (let i = 0; i < GALAXY_STAR_COUNT; i++) {
+  galaxyStars.push(new GalaxyStar());
+}
+
+// Draw subtle spiral arms
+function drawSpiralArms() {
+  const cx = galaxyCanvas.width / 2;
+  const cy = galaxyCanvas.height / 2;
+  for (let i = 0; i < 4; i++) { // 4 arms
+    galaxyCtx.beginPath();
+    for (let r = 0; r < galaxyCanvas.width/2.5; r += 1.5) {
+      const theta = r*0.1 + (i*Math.PI/2) + performance.now()*0.0002; // rotation over time
+      const x = cx + r * Math.cos(theta);
+      const y = cy + r * Math.sin(theta);
+      galaxyCtx.lineTo(x, y);
+    }
+    galaxyCtx.strokeStyle = 'rgba(0,255,255,0.05)';
+    galaxyCtx.lineWidth = 1;
+    galaxyCtx.stroke();
+  }
+}
+
+// Animation loop
+function animateGalaxy() {
+  galaxyCtx.clearRect(0, 0, galaxyCanvas.width, galaxyCanvas.height);
+
+  drawSpiralArms();
+
+  galaxyStars.forEach(star => {
+    star.update();
+    star.draw();
+  });
+
+  requestAnimationFrame(animateGalaxy);
+}
+
+animateGalaxy();
+</script>
+
+
+    
+
+    <!-- Status messages -->
+    <p id="form-status" class="text-sm mt-2 text-center hidden"></p>
+  </form>
+</div>
+
+<!-- Custom Neon Input Effect -->
+<style>
+  .neon-input::placeholder {
+    color: #00ffff;
+    opacity: 0.6;
+  }
+  .neon-input:focus {
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+  }
+</style>
+
+    <!-- Status messages -->
+    <p id="form-status" class="text-sm mt-2 text-center hidden"></p>
+  </form>
+</div>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-  // === Simple Formspree handler (no backend needed) ===
-  // 1) Create a Formspree form -> get endpoint like: https://formspree.io/f/xxxxxxx
-  // 2) Paste it below as FORM_ENDPOINT.
-  const FORM_ENDPOINT = "https://formspree.io/f/xxxxxxx"; // <- replace with yours
+  (function(){
+    emailjs.init("5uY9PEODOHy1dNLSC"); // <- Replace with your EmailJS public key
+  })();
 
   const form = document.getElementById("contact-form");
   const statusEl = document.getElementById("form-status");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    statusEl.classList.remove("hidden");
-    statusEl.textContent = "Sending...";
-    statusEl.className = "text-sm mt-2 text-center text-gray-300";
+  form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  statusEl.classList.remove("hidden");
+  statusEl.textContent = "Sending...";
+  statusEl.className = "text-sm mt-2 text-center text-gray-300";
 
-    try {
-      const formData = new FormData(form);
-      const res = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Accept": "application/json" },
-        body: formData
-      });
+  // Send email using EmailJS
+  emailjs.sendForm('service_an6fnvw', 'template_xprgl9f', this)
+    .then(() => {
+      form.reset();
+      statusEl.textContent = "Thanks! Your message has been sent.";
+      statusEl.className = "text-sm mt-2 text-center neon-text";
 
-      if (res.ok) {
-        form.reset();
-        statusEl.textContent = "Thanks! Your message has been sent.";
-        statusEl.className = "text-sm mt-2 text-center text-green-400";
-      } else {
-        statusEl.textContent = "Oops—something went wrong. Please try again.";
-        statusEl.className = "text-sm mt-2 text-center text-red-400";
-      }
-    } catch (err) {
-      statusEl.textContent = "Network error. Please check your connection.";
-      statusEl.className = "text-sm mt-2 text-center text-red-400";
-    }
-  });
+      // Hide the status message after 3 seconds
+      setTimeout(() => {
+        statusEl.classList.add("hidden");
+      }, 3000); // 3000ms = 3 seconds
+
+    }, (error) => {
+      console.error(error);
+      statusEl.textContent = "Oops—something went wrong. Please try again.";
+      statusEl.className = "text-sm mt-2 text-center neon-text";
+
+      // Hide error message after 5 seconds
+      setTimeout(() => {
+        statusEl.classList.add("hidden");
+      }, 5000);
+    });
+});
 </script>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-black/90 border-t border-cyan-400 py-12 mt-16">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+
+    <!-- Left: Neon Navigation Buttons -->
+    <div class="flex flex-wrap justify-center md:justify-start gap-4 w-full max-w-full">
+      <a href="#home" class="footer-btn">Home</a>
+      <a href="#about" class="footer-btn">About</a>
+      <a href="#projects" class="footer-btn">Projects</a>
+      <a href="#skills" class="footer-btn">Skills</a>
+      <a href="#resume" class="footer-btn">Resume</a>
+      <a href="#contact" class="footer-btn">Contact</a>
+    </div>
+
+    <!-- Right: Social Icons -->
+    <div class="flex justify-center md:justify-end gap-6">
+      <a href="https://www.facebook.com/dexterochavillooo/" target="_blank" class="social-icon">
+        <img src="Pictures/fb.jpg" alt="Facebook" class="w-10 h-10 object-cover">
+      </a>
+      <a href="https://www.instagram.com/d_eochavillo/" target="_blank" class="social-icon">
+        <img src="Pictures/insta.jpg" alt="Instagram" class="w-10 h-10 object-cover">
+      </a>
+      <a href="https://github.com/ochavillo234" target="_blank" class="social-icon">
+        <img src="Pictures/github.jpg" alt="GitHub" class="w-10 h-10 object-cover">
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom: Copyright + Neon Glow -->
+  <div class="mt-10 text-center">
+    <p class="text-lg font-semibold text-cyan-400 neon-text mb-3">
+      &copy; 2025 Deo デオ. All Rights Reserved.
+    </p>
+    <div class="mx-auto w-28 h-[2px] bg-cyan-400 animate-pulse rounded"></div>
+  </div>
+</footer>
+
+<style>
+/* Neon buttons */
+.footer-btn {
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #00fff7;
+  border-radius: 0.5rem;
+  color: #00fff7;
+  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #00fff7;
+  transition: all 0.3s ease-in-out;
+}
+.footer-btn:hover {
+  background-color: #00fff7;
+  color: #000;
+  text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 40px #00fff7;
+}
+
+/* Neon flicker animation */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 2px #00fff7, 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #00fff7;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.8;
+    text-shadow: none;
+  }
+}
+.neon-text {
+  animation: flicker 2s infinite;
+}
+
+/* Social icons hover effect */
+.social-icon img {
+  width: 42px;
+  height: 42px;
+  transition: transform 0.3s ease;
+  border-radius: 0.5rem;
+}
+.social-icon:hover img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px #00fff7);
+}
+</style>
+
 
 
 <!-- Switch -->
