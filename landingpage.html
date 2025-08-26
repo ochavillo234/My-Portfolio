@@ -5,13 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deo's Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-  // If the user refreshes landingpage.html, send them back to animation
-  if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
-    window.location.href = "index.html";
-  }
-</script>
-
   <style>
   html {
     scroll-behavior: smooth; /* <-- this enables smooth scrolling */
@@ -315,7 +308,7 @@ body {
   <!-- Project 6 -->
   <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
     <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
-      <img src="Pictures/project6.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+      <img src="Pictures/cms.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
     </div>
     <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Curriculum Management System</h3>
     <p class="text-gray-300 text-[13px] leading-[16px] text-center mb-4">
@@ -329,7 +322,7 @@ body {
    <!-- Project 7 -->
   <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
     <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
-      <img src="Pictures/project6.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+      <img src="Pictures/ecom.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
     </div>
     <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Ecommerce</h3>
     <p class="text-gray-300 text-[12px] leading-[16px] text-center mb-4">
@@ -337,7 +330,7 @@ body {
     </p>
     <div class="flex gap-4">
       <a href="https://github.com/ochavillo234/Ecommerce" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
-      <a href="https://ochavillo234.github.io/PortDeo/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+      <a href="https://ecommerce-tau-dusky-46.vercel.app/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
     </div>
   </div>
 
@@ -384,6 +377,427 @@ body {
       <a href="https://deoport.vercel.app/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
     </div>
   </div>
+
+</section>
+
+
+<!-- ================= SKILLS SECTION ================= -->
+<section id="skills" class="py-28 mt-52 text-center relative">
+  <h2 class="text-4xl font-bold mb-16 neon-text">My Skills</h2>
+
+  <div class="max-w-5xl mx-auto px-6 space-y-20">
+
+<!-- Frontend -->
+<div>
+  <h3 class="text-2xl font-semibold neon-text mb-10 text-center">FRONTEND DEVELOPMENT</h3>
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+    <div class="w-36">
+      <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <img src="Pictures/Html.jpg" alt="HTML" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">HTML</p>
+    </div>
+    <div class="w-36">
+      <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <img src="Pictures/css.jpg" alt="CSS" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">CSS</p>
+    </div>
+    <div class="w-36">
+      <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <img src="Pictures/js.jpg" alt="JavaScript" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">JavaScript</p>
+    </div>
+    <div class="w-36">
+      <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <img src="Pictures/react.jpg" alt="React" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">React</p>
+    </div>
+    <div class="w-36">
+      <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <img src="Pictures/tailwind.jpg" alt="Tailwind" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">Tailwind</p>
+    </div>
+  </div>
+</div>
+
+<!-- Backend -->
+<div>
+  <h3 class="text-2xl font-semibold neon-text mb-10 text-center">BACKEND DEVELOPMENT</h3>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="w-36">
+      <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <img src="Pictures/node.jpg" alt="Node.js" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">Node.js</p>
+    </div>
+    <div class="w-36">
+      <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <img src="Pictures/express.jpg" alt="Express" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">Express</p>
+    </div>
+    <div class="w-36">
+      <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <img src="Pictures/js.jpg" alt="JavaScript" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">JavaScript</p>
+    </div>
+    <div class="w-36">
+      <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <img src="Pictures/python.jpg" alt="Python" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">Python</p>
+    </div>
+  </div>
+</div>
+
+<!-- Database -->
+<div>
+  <h3 class="text-2xl font-semibold neon-text mb-10 text-center">DATABASE</h3>
+  <div class="flex justify-center gap-6">
+    <div class="w-36">
+      <div class="bg-black/40 border border-pink-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <img src="Pictures/sqll.jpg" alt="MySQL" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">MySQL</p>
+    </div>
+    <div class="w-36">
+      <div class="bg-black/40 border border-pink-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <img src="Pictures/db.jpg" alt="MongoDB" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">MongoDB</p>
+    </div>
+  </div>
+</div>
+
+<!-- Soft Skills -->
+<div>
+  <h3 class="text-2xl font-semibold neon-text mb-10 text-center">SOFT SKILLS</h3>
+  
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center mx-auto max-w-6xl">
+    <!-- Row 1 -->
+    <div class="w-44">
+      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <img src="Pictures/Problem Solving.png" alt="Problem-Solving" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">Problem-Solving</p>
+    </div>
+
+    <div class="w-44">
+      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <img src="Pictures/Team Workk.png" alt="Teamwork" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">Teamwork</p>
+    </div>
+
+    <div class="w-44">
+      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <img src="Pictures/Adapt.png" alt="Adaptability" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">Adaptability</p>
+    </div>
+
+    <div class="w-44">
+      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <img src="Pictures/Creat.png" alt="Creativity" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">Creativity</p>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="w-44">
+      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <img src="Pictures/Speech.png" alt="Communication" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">Communication</p>
+    </div>
+
+    <div class="w-44">
+      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <img src="Pictures/Leader.png" alt="Leadership" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">Leadership</p>
+    </div>
+
+    <div class="w-44">
+      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <img src="Pictures/Time.png" alt="Time Management" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">Time Management</p>
+    </div>
+
+    <div class="w-44">
+      <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <img src="Pictures/Multi.png" alt="Multitasking" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">Multitasking</p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Gaming Skills -->
+<div>
+  <h3 class="text-2xl font-semibold neon-text mb-10 text-center">GAMING HIGHLIGHTS<br>(Click it)</h3>
+  
+  <div class="flex justify-center gap-8 flex-wrap">
+    <!-- League of Legends -->
+    <div class="w-44 cursor-pointer" onclick="openHighlights('lol')">
+      <div class="bg-black/40 border border-yellow-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <img src="Pictures/lol.jpg" alt="League of Legends" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">League of Legends</p>
+    </div>
+
+    <!-- Mobile Legends -->
+    <div class="w-44 cursor-pointer" onclick="openHighlights('ml')">
+      <div class="bg-black/40 border border-yellow-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <img src="Pictures/ml.jpg" alt="Mobile Legends" class="w-full h-full object-cover">
+      </div>
+      <p class="text-sm mt-2 text-center neon-text">Mobile Legends</p>
+    </div>
+  </div>
+</div>
+
+<!-- Highlights Modal -->
+<div id="highlights-modal" class="hidden fixed inset-0 bg-black/80 flex justify-center items-center z-50">
+  <div class="bg-black p-6 rounded-xl max-w-4xl w-full">
+    <h4 class="text-xl font-semibold neon-text text-center mb-6">Highlights</h4>
+    <div id="highlights-boxes" class="flex justify-center gap-6 flex-wrap">
+      <!-- highlight boxes will be inserted here -->
+    </div>
+    <button onclick="closeHighlights()" class="mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 block mx-auto">Close</button>
+  </div>
+</div>
+
+<!-- Video Modal -->
+<div id="video-modal" class="hidden fixed inset-0 bg-black/90 flex justify-center items-center z-50">
+  <div class="bg-black p-4 rounded-xl max-w-3xl w-full">
+    <video id="highlight-video" controls autoplay class="w-full rounded-lg">
+      <source src="" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button onclick="closeVideo()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
+  </div>
+</div>
+
+<script>
+  // Example highlights per game
+  const highlights = {
+    lol: [
+      { img: "Pictures/zed.jpg", video: "Video/Zedmontage.webm", title: "Zed Montage" },
+      { img: "Pictures/yas.jpg", video: "video2.mp4", title: "Yas Montage" },
+      { img: "Pictures/thresh.jpg", video: "video3.mp4", title: "Thresh Montage" }
+    ],
+    ml: [
+      { img: "Pictures/miya.jpg", video: "ml_video1.mp4", title: "Miya Montage" },
+      { img: "Pictures/moskov.jpg", video: "ml_video2.mp4", title: "Moskov Montage" },
+      { img: "Pictures/layla.jpg", video: "ml_video3.mp4", title: "Layla Montage" }
+    ]
+  };
+
+  function openHighlights(game) {
+    const container = document.getElementById("highlights-boxes");
+    container.innerHTML = ""; // Clear old highlights
+
+    highlights[game].forEach(h => {
+      const box = document.createElement("div");
+      box.className = "w-40 cursor-pointer";
+      box.innerHTML = `
+        <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-40">
+          <img src="${h.img}" alt="${h.title}" class="w-full h-full object-cover">
+        </div>
+        <p class="text-sm mt-2 text-center neon-text">${h.title}</p>
+      `;
+      box.onclick = () => playVideo(h.video);
+      container.appendChild(box);
+    });
+
+    document.getElementById("highlights-modal").classList.remove("hidden");
+  }
+
+  function closeHighlights() {
+    document.getElementById("highlights-modal").classList.add("hidden");
+  }
+
+  function playVideo(src) {
+    const videoModal = document.getElementById("video-modal");
+    const video = document.getElementById("highlight-video");
+
+    video.querySelector("source").src = src;
+    video.load();
+    video.play();
+    videoModal.classList.remove("hidden");
+  }
+
+  function closeVideo() {
+    const videoModal = document.getElementById("video-modal");
+    const video = document.getElementById("highlight-video");
+
+    video.pause();
+    videoModal.classList.add("hidden");
+  }
+</script>
+
+  </div>
+</section>
+
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="py-16">
+  <h3 class="text-2xl font-semibold neon-text mb-10 text-center">CONTACT ME</h3>
+
+  <!-- Info + Socials -->
+  <div class="mx-auto max-w-4xl grid gap-6 md:grid-cols-2">
+    <!-- Contact Info -->
+    <div class="bg-black/40 border border-cyan-400 rounded-2xl p-6 shadow-lg">
+      
+      <!-- Get in touch -->
+      <h4 class="text-lg font-semibold neon-text mb-6 text-center">GET IN TOUCH</h4>
+      
+      <ul class="space-y-3 text-gray-300 text-sm">
+        <!-- Email -->
+        <li class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#75FBFD">
+            <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/>
+          </svg>
+          <span class="font-medium text-gray-200">Email:</span>
+          <a href="mailto:dexterrochavilloo@gmail.com" class="text-cyan-400 hover:underline break-all ml-1">
+            dexterrochavilloo@gmail.com
+          </a>
+        </li>
+
+        <!-- Phone -->
+        <li class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#75FBFD">
+            <path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/>
+          </svg>
+          <span class="font-medium text-gray-200">Phone:</span>
+          <a href="tel:+639668932298" class="text-cyan-400 hover:underline ml-1">
+            09668932298 / 09192174957
+          </a>
+        </li>
+
+        <!-- Address -->
+        <li class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#75FBFD">
+            <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q152 0 263.5 98T876-538q-20-10-41.5-15.5T790-560q-19-73-68.5-130T600-776v16q0 33-23.5 56.5T520-680h-80v80q0 17-11.5 28.5T400-560h-80v80h240q11 0 20.5 5.5T595-459q-17 27-26 57t-9 62q0 63 32.5 117T659-122q-41 20-86 31t-93 11Zm-40-82v-78q-33 0-56.5-23.5T360-320v-40L168-552q-3 18-5.5 36t-2.5 36q0 121 79.5 212T440-162Zm340 82q-7 0-12-4t-7-10q-11-35-31-65t-43-59q-21-26-34-57t-13-65q0-58 41-99t99-41q58 0 99 41t41 99q0 34-13.5 64.5T873-218q-23 29-43 59t-31 65q-2 6-7 10t-12 4Zm0-113q10-17 22-31.5t23-29.5q14-19 24.5-40.5T860-340q0-33-23.5-56.5T780-420q-33 0-56.5 23.5T700-340q0 24 10.5 45.5T735-254q12 15 23.5 29.5T780-193Zm0-97q-21 0-35.5-14.5T730-340q0-21 14.5-35.5T780-390q21 0 35.5 14.5T830-340q0 21-14.5 35.5T780-290Z"/>
+          </svg>
+          <span class="font-medium text-gray-200">Address:</span>
+          <a href="https://maps.app.goo.gl/Ws47b7XXQs2aoZGZA" 
+             target="_blank" 
+             class="ml-1 text-cyan-400 hover:underline">
+            205 Gangdong-daero, Gangdong-gu, Seoul, South Korea
+          </a>
+        </li>
+      </ul>
+
+      <!-- Socials -->
+      <div class="mt-6">
+        <p class="text-gray-200 text-sm mb-3 font-medium neon-text text-center">FIND ME ONLINE</p>
+        <div class="flex justify-center flex-wrap gap-4 mb-6">
+          <a href="https://www.facebook.com/dexterochavillooo/" target="_blank" class="px-3 py-1 rounded-full border border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 transition text-sm">Facebook</a>
+          <a href="https://www.instagram.com/d_eochavillo/" target="_blank" class="px-3 py-1 rounded-full border border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 transition text-sm">Instagram</a>
+          <a href="https://github.com/ochavillo234" target="_blank" class="px-3 py-1 rounded-full border border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 transition text-sm">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3551.6167775222343!2d127.12650117626913!3d37.524012272049724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca47a55555555%3A0x83f404863f3fb36a!2sJYP%20ENTERTAINMENT!5e1!3m2!1sen!2sph!4v1756181817099!5m2!1sen!2sph"
+        width="100%"
+        height="200"
+        class="border-t border-white/20 rounded-b-2xl"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+    </div>
+
+
+    <!-- Contact Form -->
+    <div class="bg-black/40 border border-cyan-400 rounded-2xl p-6 shadow-lg">
+      <h4 class="text-lg font-semibold neon-text mb-4 text-center md:text-left">Send a message</h4>
+
+      <!-- Replace the action URL with your Formspree endpoint: https://formspree.io/f/xxxxxxx -->
+      <form id="contact-form" class="space-y-4">
+        <!-- Honeypot field (anti-spam) -->
+        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
+
+        <div>
+          <label class="block text-sm text-gray-300 mb-1" for="name">Your Name</label>
+          <input id="name" name="name" type="text" required
+                 class="w-full p-3 rounded-lg bg-black/40 border border-cyan-400 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/60">
+        </div>
+
+        <div>
+          <label class="block text-sm text-gray-300 mb-1" for="email">Your Email</label>
+          <input id="email" name="email" type="email" required
+                 class="w-full p-3 rounded-lg bg-black/40 border border-cyan-400 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/60">
+        </div>
+
+        <div>
+          <label class="block text-sm text-gray-300 mb-1" for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required
+                    class="w-full p-3 rounded-lg bg-black/40 border border-cyan-400 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/60"></textarea>
+        </div>
+
+        <button type="submit"
+                class="w-full bg-cyan-500 text-black font-semibold py-2 rounded-lg hover:bg-cyan-400 transition">
+          Send
+        </button>
+
+        <!-- Status messages -->
+        <p id="form-status" class="text-sm mt-2 text-center hidden"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  // === Simple Formspree handler (no backend needed) ===
+  // 1) Create a Formspree form -> get endpoint like: https://formspree.io/f/xxxxxxx
+  // 2) Paste it below as FORM_ENDPOINT.
+  const FORM_ENDPOINT = "https://formspree.io/f/xxxxxxx"; // <- replace with yours
+
+  const form = document.getElementById("contact-form");
+  const statusEl = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    statusEl.classList.remove("hidden");
+    statusEl.textContent = "Sending...";
+    statusEl.className = "text-sm mt-2 text-center text-gray-300";
+
+    try {
+      const formData = new FormData(form);
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: formData
+      });
+
+      if (res.ok) {
+        form.reset();
+        statusEl.textContent = "Thanks! Your message has been sent.";
+        statusEl.className = "text-sm mt-2 text-center text-green-400";
+      } else {
+        statusEl.textContent = "Oops—something went wrong. Please try again.";
+        statusEl.className = "text-sm mt-2 text-center text-red-400";
+      }
+    } catch (err) {
+      statusEl.textContent = "Network error. Please check your connection.";
+      statusEl.className = "text-sm mt-2 text-center text-red-400";
+    }
+  });
+</script>
+
 
 <!-- Switch -->
 <script>
