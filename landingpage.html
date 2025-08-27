@@ -93,52 +93,99 @@ body {
 
 <body class="text-white">
 
-  <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full flex justify-between items-center px-10 py-5 z-50 bg-black/30 backdrop-blur-sm">
+<!-- Navbar -->
+<header class="fixed top-0 left-0 w-full flex justify-between items-center px-10 py-5 z-50 bg-black/30 backdrop-blur-sm">
   <!-- Profile + Name -->
-<div class="flex items-center space-x-4">
-  <button id="themeToggle" class="text-2xl font-bold neon-text transition-colors duration-300 flex items-center gap-2">
-    <span class="text-cyan-400 transform rotate-0">➤</span> <!-- points right -->
-    Deo デオ
-    <span class="text-cyan-400 transform rotate-180">➤</span> <!-- points left -->
+  <div class="flex items-center space-x-4">
+    <button id="themeToggle" class="text-2xl font-bold neon-text transition-colors duration-300 flex items-center gap-2">
+      <span class="text-cyan-400 transform rotate-0">➤</span>
+      Deo デオ
+      <span class="text-cyan-400 transform rotate-180">➤</span>
+    </button>
+  </div>
+
+  <!-- Desktop Navigation -->
+  <nav class="hidden md:flex space-x-8 neon-text font-medium">
+    <a href="#home" class="nav-link hover:text-cyan-400">Home</a>
+    <a href="#about" class="nav-link hover:text-cyan-400">About</a>
+    <a href="#projects" class="nav-link hover:text-cyan-400">Projects</a>
+    <a href="#skills" class="nav-link hover:text-cyan-400">Skills</a>
+    <a href="#resume" class="nav-link hover:text-cyan-400">Resume</a>
+    <a href="#contact" class="nav-link hover:text-cyan-400">Contact</a>
+  </nav>
+
+  <!-- Hamburger Button (Mobile only) -->
+  <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none">
+    <span class="w-6 h-1 bg-cyan-400"></span>
+    <span class="w-6 h-1 bg-cyan-400"></span>
+    <span class="w-6 h-1 bg-cyan-400"></span>
   </button>
-</div>
+</header>
+
+<!-- Mobile Dropdown Menu -->
+<nav id="mobile-menu" 
+     class="hidden flex-col items-center space-y-4 py-5 neon-text font-medium 
+            bg-black/95 fixed top-[72px] left-0 w-full z-40 md:hidden">
+  <a href="#home" class="nav-link hover:text-cyan-400">Home</a>
+  <a href="#about" class="nav-link hover:text-cyan-400">About</a>
+  <a href="#projects" class="nav-link hover:text-cyan-400">Projects</a>
+  <a href="#skills" class="nav-link hover:text-cyan-400">Skills</a>
+  <a href="#resume" class="nav-link hover:text-cyan-400">Resume</a>
+  <a href="#contact" class="nav-link hover:text-cyan-400">Contact</a>
+</nav>
+
+<!-- Script -->
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const links = mobileMenu.querySelectorAll("a");
+
+  // Toggle menu
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    mobileMenu.classList.toggle("flex");
+  });
+
+  // Close menu after clicking a link
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      mobileMenu.classList.remove("flex");
+    });
+  });
+</script>
 
 
-    <!-- Navigation Links -->
-    <nav class="flex space-x-8 neon-text font-medium">
-      <a href="#home" class="nav-link hover:text-cyan-400">Home</a>
-      <a href="#about" class="nav-link hover:text-cyan-400">About</a>
-      <a href="#projects" class="nav-link hover:text-cyan-400">Projects</a>
-      <a href="#skills" class="nav-link hover:text-cyan-400">Skills</a>
-      <a href="#resume" class="nav-link hover:text-cyan-400">Resume</a>
-      <a href="#contact" class="nav-link hover:text-cyan-400">Contact</a>
-    </nav>
-  </header>
+<!-- Hero Section -->
+<section id="home" class="relative min-h-screen flex flex-col items-center justify-start 
+  pt-24 md:pt-28 space-y-6 overflow-hidden text-white">
 
-  <!-- Hero Section -->
-<section id="home" class="relative min-h-screen flex flex-col items-center justify-start pt-24 md:pt-28 space-y-6 overflow-hidden">
-  
   <!-- Background -->
   <div class="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black z-0">
     <!-- Neon glow shapes -->
-    <div class="absolute w-96 h-96 bg-cyan-500 opacity-20 rounded-full top-1/4 left-1/3 blur-3xl animate-pulse-slow"></div>
-    <div class="absolute w-72 h-72 bg-pink-500 opacity-20 rounded-full bottom-1/4 right-1/4 blur-2xl animate-pulse-slow"></div>
-    <div class="absolute w-80 h-80 bg-purple-500 opacity-10 rounded-full top-1/2 right-1/2 blur-2xl animate-pulse-slower"></div>
+    <div class="absolute w-64 h-64 md:w-96 md:h-96 bg-cyan-500 opacity-20 rounded-full 
+                top-1/4 left-1/3 blur-3xl animate-pulse-slow"></div>
+    <div class="absolute w-52 h-52 md:w-72 md:h-72 bg-pink-500 opacity-20 rounded-full 
+                bottom-1/4 right-1/4 blur-2xl animate-pulse-slow"></div>
+    <div class="absolute w-60 h-60 md:w-80 md:h-80 bg-purple-500 opacity-10 rounded-full 
+                top-1/2 right-1/2 blur-2xl animate-pulse-slower"></div>
   </div>
 
   <!-- Profile Picture -->
   <img src="Pictures/Deo.jpg" alt="Deo Profile" 
-       class="relative z-10 w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-cyan-500 shadow-lg object-cover">
+       class="relative z-10 w-32 h-32 sm:w-36 sm:h-36 md:w-48 md:h-48 rounded-full 
+              border-4 border-cyan-500 shadow-lg object-cover">
 
   <!-- Welcome Text -->
-  <h2 class="relative z-10 font-extrabold neon-text text-center px-4 md:px-0 text-3xl md:text-4xl">
+  <h2 class="relative z-10 font-extrabold neon-text text-center 
+             text-2xl sm:text-3xl md:text-4xl px-4 md:px-0">
     Welcome to Deo デオ's Portfolio
   </h2>
 
   <!-- Short Intro / Tagline -->
-  <p class="relative z-10 intro-text text-center max-w-2xl px-4 md:px-0">
-    <span>Hi, I’m Deo デオ</span> I build responsive and modern websites using HTML, CSS, Tailwind, JavaScript, and React.
+  <p class="relative z-10 intro-text text-center max-w-xl md:max-w-2xl 
+            text-sm sm:text-base md:text-lg px-6 md:px-0 leading-relaxed">
+    <span>Hi, I’m Deo デオ.</span> I build responsive and modern websites using HTML, CSS, Tailwind, JavaScript, and React.
     I have worked on several projects, creating responsive and visually appealing web applications.
     I enjoy experimenting with futuristic designs and bringing creative ideas to life through code.
   </p>
@@ -147,24 +194,29 @@ body {
   <div class="relative z-10 flex flex-col items-center mt-4 space-y-4">
     <!-- CTA Button -->
     <a href="#projects" 
-       class="px-6 py-3 bg-cyan-500 text-black font-bold rounded-lg hover:bg-cyan-400 transition shadow-lg">
+       class="px-5 py-2 sm:px-6 sm:py-3 bg-cyan-500 text-black font-bold rounded-lg 
+              hover:bg-cyan-400 transition shadow-lg text-sm sm:text-base">
        View My Work
     </a>
 
     <!-- Social Links -->
-    <div class="flex space-x-4">
+    <div class="flex space-x-3 sm:space-x-4">
       <a href="https://www.facebook.com/dexterochavillooo/" target="_blank">
-        <img src="Pictures/fb.jpg" alt="Facebook" class="w-12 h-12 object-cover hover:scale-110 transition-transform">
+        <img src="Pictures/fb.jpg" alt="Facebook" 
+             class="w-9 h-9 sm:w-12 sm:h-12 object-cover hover:scale-110 transition-transform">
       </a>
       <a href="https://www.instagram.com/d_eochavillo/" target="_blank">
-        <img src="Pictures/insta.jpg" alt="Instagram" class="w-12 h-12 object-cover hover:scale-110 transition-transform">
+        <img src="Pictures/insta.jpg" alt="Instagram" 
+             class="w-9 h-9 sm:w-12 sm:h-12 object-cover hover:scale-110 transition-transform">
       </a>
       <a href="https://github.com/ochavillo234" target="_blank">
-        <img src="Pictures/github.jpg" alt="GitHub" class="w-12 h-12 object-cover hover:scale-110 transition-transform">
+        <img src="Pictures/github.jpg" alt="GitHub" 
+             class="w-9 h-9 sm:w-12 sm:h-12 object-cover hover:scale-110 transition-transform">
       </a>
     </div>
   </div>
 </section>
+
 
 <style>
   /* Custom animation for subtle neon pulse */
@@ -186,62 +238,61 @@ body {
 
 
 <!-- About Section -->
-<section id="about" class="relative min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 md:pt-28 px-6 md:px-20 overflow-hidden bg-black">
+<section id="about" class="relative min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 md:pt-28 px-4 sm:px-6 md:px-20 overflow-hidden bg-black">
 
   <!-- Background: Neon Network -->
-  <canvas id="neon-network" class="absolute inset-0 z-0"></canvas>
+  <canvas id="neon-network" class="absolute inset-0 w-full h-full z-0"></canvas>
 
   <!-- Left: Profile Picture -->
-  <div class="md:w-1/2 flex justify-center mb-12 md:mb-0 relative z-10">
+  <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0 relative z-10">
     <div class="relative">
-      <img src="Pictures/Pana.jpg" alt="Deo Profile" class="w-64 h-64 md:w-72 md:h-72 rounded-full border-4 border-cyan-500 shadow-lg object-cover hover:scale-105 transition-transform">
+      <img src="Pictures/Pana.jpg" alt="Deo Profile" 
+           class="w-40 h-40 sm:w-52 sm:h-52 md:w-72 md:h-72 rounded-full border-4 border-cyan-500 shadow-lg object-cover hover:scale-105 transition-transform">
       <div class="absolute -inset-2 rounded-full border-2 border-cyan-400 animate-ping opacity-50"></div>
       <div class="absolute -inset-4 rounded-full border-2 border-purple-500 animate-pulse opacity-30"></div>
     </div>
   </div>
 
   <!-- Right: Boxes -->
-  <div class="md:w-1/2 flex flex-col items-center relative z-10">
-    <div class="grid grid-cols-2 gap-6 w-full max-w-3xl">
-      <h2 class="col-span-2 text-[36px] font-extrabold neon-text text-center mb-4">About Me</h2>
+  <div class="w-full md:w-1/2 flex flex-col items-center relative z-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
+      <h2 class="col-span-1 sm:col-span-2 text-[28px] sm:text-[32px] md:text-[36px] font-extrabold neon-text text-center mb-4">About Me</h2>
 
       <!-- Box 1 -->
-      <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 neon-glow">
-        <h3 class="text-[20px] font-bold neon-text mb-2 text-center">Who am I</h3>
-        <p class="text-gray-300 text-[14px] leading-[18px]">Hi, I’m <span class="text-cyan-400 font-semibold">Dexter Ochavillo</span>…</p>
+      <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 sm:p-5 min-h-[180px] sm:min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 neon-glow">
+        <h3 class="text-[18px] sm:text-[20px] font-bold neon-text mb-2 text-center">Who am I</h3>
+        <p class="text-gray-300 text-[12px] sm:text-[14px] leading-[18px] sm:leading-[20px] text-justify">
+          Hi, I’m <span class="text-cyan-400 font-semibold">Dexter Ochavillo</span>, a passionate <span class="text-cyan-400 font-semibold">Computer Science student</span> with hands-on experience in <span class="text-cyan-400 font-semibold">developing websites and systems</span>. I enjoy turning ideas into <span class="text-cyan-400 font-semibold">functional and user-friendly digital solutions</span>, combining clean design with efficient code. With a strong foundation in <span class="text-cyan-400 font-semibold">programming</span> and <span class="text-cyan-400 font-semibold">problem-solving</span>, I’m eager to grow my skills further while contributing to meaningful projects in <span class="text-cyan-400 font-semibold">web development</span>.
+        </p>
       </div>
 
       <!-- Box 2 -->
-      <div class="backdrop-blur-md bg-white/5 border border-purple-400 rounded-2xl p-4 min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-purple-500/50 neon-glow">
-        <h3 class="text-[20px] font-bold neon-text mb-2 text-center">Skills & Expertise</h3>
-        <p class="text-gray-300 text-[13px] leading-[18px]">I use <span class="text-cyan-400 font-semibold">HTML, CSS, Tailwind…</span></p>
+      <div class="backdrop-blur-md bg-white/5 border border-purple-400 rounded-2xl p-4 sm:p-5 min-h-[180px] sm:min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-purple-500/50 neon-glow">
+        <h3 class="text-[18px] sm:text-[20px] font-bold neon-text mb-2 text-center">Skills & Expertise</h3>
+        <p class="text-gray-300 text-[12px] sm:text-[14px] leading-[18px] sm:leading-[20px] text-justify">
+          I have a strong background in <span class="text-cyan-400 font-semibold">web development</span>, building responsive and user-friendly websites with <span class="text-cyan-400 font-semibold">HTML, CSS, Tailwind CSS, JavaScript</span>, and <span class="text-cyan-400 font-semibold">React</span>. My expertise also extends to <span class="text-cyan-400 font-semibold">system development</span>, where I work with <span class="text-cyan-400 font-semibold">Java, JavaScript, Python, React, and Node.js</span> to create efficient and scalable solutions. Additionally, I am skilled in <span class="text-cyan-400 font-semibold">database management</span>, particularly with <span class="text-cyan-400 font-semibold">MySQL</span>, ensuring reliable data handling and integration.
+        </p>
       </div>
 
       <!-- Box 3 -->
-      <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 neon-glow">
-        <h3 class="text-[20px] font-bold neon-text mb-2 text-center">Hobbies & Interests</h3>
-        <p class="text-gray-300 text-[13px] leading-[15px]">I enjoy <span class="text-cyan-400 font-semibold">music, games…</span></p>
+      <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 sm:p-5 min-h-[180px] sm:min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 neon-glow">
+        <h3 class="text-[18px] sm:text-[20px] font-bold neon-text mb-2 text-center">Hobbies & Interests</h3>
+        <p class="text-gray-300 text-[12px] sm:text-[14px] leading-[18px] sm:leading-[20px] text-justify">
+          Outside of coding, I enjoy <span class="text-cyan-400 font-semibold">listening to music</span>, <span class="text-cyan-400 font-semibold">watching movies, dramas, anime, and series</span>, as well as <span class="text-cyan-400 font-semibold">reading manga and comics</span>. I also love playing <span class="text-cyan-400 font-semibold">online games</span> especially <span class="text-cyan-400 font-semibold">League of Legends</span>, where I’m currently <span class="text-cyan-400 font-semibold">hardstuck at Gold</span>, and <span class="text-cyan-400 font-semibold">Mobile Legends</span>, which I enjoy playing with my girlfriend. Beyond that, I like <span class="text-cyan-400 font-semibold">exploring new technologies</span>, <span class="text-cyan-400 font-semibold">learning new skills</span>, and <span class="text-cyan-400 font-semibold">keeping up with the latest trends in tech and gaming culture</span>. These hobbies not only help me relax but also keep me <span class="text-cyan-400 font-semibold">inspired and creative</span>.
+        </p>
       </div>
 
       <!-- Box 4 -->
-      <div class="backdrop-blur-md bg-white/5 border border-purple-400 rounded-2xl p-4 min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-purple-500/50 neon-glow">
-        <h3 class="text-[20px] font-bold neon-text mb-2 text-center">Learning & Growth</h3>
-        <p class="text-gray-300 text-[14px] leading-[16px]">I’m improving in <span class="text-cyan-400 font-semibold">JavaScript, Python…</span></p>
+      <div class="backdrop-blur-md bg-white/5 border border-purple-400 rounded-2xl p-4 sm:p-5 min-h-[180px] sm:min-h-[200px] shadow-lg hover:scale-105 transition-transform hover:shadow-purple-500/50 neon-glow">
+        <h3 class="text-[18px] sm:text-[20px] font-bold neon-text mb-2 text-center">Learning & Growth</h3>
+        <p class="text-gray-300 text-[12px] sm:text-[14px] leading-[18px] sm:leading-[20px] text-justify">
+          At this stage of my journey, I have gained knowledge of multiple <span class="text-cyan-400 font-semibold">programming languages</span> and <span class="text-cyan-400 font-semibold">technologies</span> for both <span class="text-cyan-400 font-semibold">web and system development</span>. While I am not yet a master of all of them, I am continuously <span class="text-cyan-400 font-semibold">improving my skills</span> and <span class="text-cyan-400 font-semibold">deepening my understanding</span> through consistent practice and <span class="text-cyan-400 font-semibold">hands-on projects</span>. I am committed to <span class="text-cyan-400 font-semibold">expanding my expertise</span>, <span class="text-cyan-400 font-semibold">mastering the tools I already know</span>, and <span class="text-cyan-400 font-semibold">exploring new technologies</span> that will help me grow as a <span class="text-cyan-400 font-semibold">developer</span> and adapt to the <span class="text-cyan-400 font-semibold">ever-evolving tech industry</span>.
+        </p>
       </div>
     </div>
   </div>
-
 </section>
 
-<style>
-  .neon-glow {
-    box-shadow: 0 0 10px rgba(0,255,255,0.5), 0 0 20px rgba(255,0,255,0.2);
-    transition: box-shadow 0.3s ease-in-out;
-  }
-  .neon-glow:hover {
-    box-shadow: 0 0 20px rgba(0,255,255,0.8), 0 0 30px rgba(255,0,255,0.4);
-  }
-</style>
 
 <script>
   const canvas = document.getElementById('neon-network');
@@ -249,14 +300,16 @@ body {
   let nodes = [];
 
   function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const section = document.getElementById('about');
+    canvas.width = section.offsetWidth;
+    canvas.height = section.offsetHeight;
     initNodes();
   }
 
   function initNodes() {
     nodes = [];
-    for (let i = 0; i < 80; i++) { // number of nodes
+    const nodeCount = window.innerWidth < 768 ? 40 : 80; // fewer nodes on mobile
+    for (let i = 0; i < nodeCount; i++) {
       nodes.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -313,352 +366,391 @@ body {
 <!-- Projects Section -->
 <section id="projects" class="min-h-screen flex flex-col items-center justify-center pt-24 md:pt-28 px-6 md:px-20 bg-black/90 relative z-0 overflow-hidden">
 
-
-    <!-- Background Canvas -->
-  <canvas id="neon-network" class="fixed top-0 left-0 w-screen h-screen -z-10"></canvas>
+  <!-- Background Animation (Unique) -->
+  <canvas id="projects-bg" class="absolute inset-0 w-full h-full z-0"></canvas>
 
   <!-- Section Heading -->
-  <h2 class="text-[36px] font-extrabold neon-text text-center mb-12">My Projects</h2>
-  <p class="text-gray-300 text-center max-w-3xl mb-12 text-[14px] leading-[20px]">
-  Here are some of the <span class="text-cyan-400 font-semibold">projects</span> I’ve worked on. Each project showcases my <span class="text-purple-400 font-semibold">skills in web development</span>, <span class="text-cyan-400 font-semibold">systems</span>, and <span class="text-purple-400 font-semibold">creative problem-solving</span>. 
-  Check out the <span class="text-cyan-400 font-semibold">live demos</span> or visit the <span class="text-purple-400 font-semibold">GitHub repositories</span> to explore more!
-</p>
-
-
-<!-- Projects Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
-
-  <!-- Project 1 -->
-<div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
-  <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
-    <img src="Pictures/Onepiece.jpg" alt="Project Two" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-  </div>
-  <h3 class="text-[18px] font-bold neon-text mb-2 text-center">My First Time Creating HTML Project</h3>
-  <p class="text-[14px] leading-[18px] text-gray-300 text-center mb-4">
-    This was my very first project, created during my first year of college as a midterm project. I built it using HTML and CSS, which helped me gain hands-on experience in web development and design fundamentals.
+  <h2 class="text-[28px] sm:text-[32px] md:text-[36px] font-extrabold neon-text text-center mb-6 sm:mb-10 relative z-10">
+    My Projects
+  </h2>
+  <p class="text-gray-300 text-center max-w-3xl mb-8 sm:mb-12 text-[13px] sm:text-[14px] leading-[20px] relative z-10">
+    Here are some of the <span class="text-cyan-400 font-semibold">projects</span> I’ve worked on. Each project showcases my 
+    <span class="text-purple-400 font-semibold">skills in web development</span>, <span class="text-cyan-400 font-semibold">systems</span>, 
+    and <span class="text-purple-400 font-semibold">creative problem-solving</span>. 
+    Check out the <span class="text-cyan-400 font-semibold">live demos</span> or visit the 
+    <span class="text-purple-400 font-semibold">GitHub repositories</span> to explore more!
   </p>
 
-  <div class="flex gap-4">
-    <a href="https://github.com/ochavillo234/OnePiece" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
-    <a href="https://ochavillo234.github.io/OnePiece/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+  <!-- Projects Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl relative z-10">
+
+    <!-- Project 1 -->
+    <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+      <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+        <img src="Pictures/Onepiece.jpg" alt="Project One" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-[18px] font-bold neon-text mb-2 text-center">My First Time Creating HTML Project</h3>
+      <p class="text-[14px] leading-[18px] text-gray-300 text-center mb-4">
+        This was my very first project, created during my first year of college as a midterm project. I built it using HTML and CSS, which helped me gain hands-on experience in web development and design fundamentals.
+      </p>
+      <div class="flex gap-4">
+        <a href="https://github.com/ochavillo234/OnePiece" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+        <a href="https://ochavillo234.github.io/OnePiece/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+      <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+        <img src="Pictures/1stWeb.jpg" alt="Project Two" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-[18px] font-bold neon-text mb-2 text-center">My First Web Portfolio</h3>
+      <p class="text-[14px] leading-[18px] text-gray-300 text-center mb-4">
+        This is my first-ever portfolio, built using HTML and CSS. Creating it helped me understand the fundamentals of web design, organize content effectively, and gain practical experience in building and styling responsive web pages. It was a great starting point for my journey in web development.
+      </p>
+      <div class="flex gap-4">
+        <a href="https://github.com/ochavillo234/WebDex" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+        <a href="https://ochavillo234.github.io/WebDex/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+      <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+        <img src="Pictures/enrollment.jpg" alt="Project Three" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Enrollment System</h3>
+      <p class="text-gray-300 text-[14px] leading-[18px] text-center mb-4">
+        A web-based enrollment system for Cavite State University Bacoor Campus, built using JavaScript, React, TailwindCSS, and Node.js. This system allows students to register, view available courses, and enroll in classes, while administrators can manage courses and monitor student enrollments.
+      </p>
+      <div class="flex gap-4">
+        <a href="https://github.com/ochavillo234/ESG1" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+      <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+        <img src="Pictures/2ndWeb.jpg" alt="Project Four" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-[18px] font-bold neon-text mb-2 text-center">My Second Web Portfolio</h3>
+      <p class="text-gray-300 text-[14px] leading-[18px] text-center mb-4">
+        This is my second web portfolio, created for our final semester project. I built it using HTML, CSS, JavaScript, and TailwindCSS to create a responsive and modern web design.
+      </p>
+      <div class="flex gap-4">
+        <a href="https://github.com/ochavillo234/PortDeo" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+        <a href="https://ochavillo234.github.io/PortDeo/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+      </div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+      <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+        <img src="Pictures/Dodge.jpg" alt="Project Five" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Dodge the Creeps</h3>
+      <p class="text-gray-300 text-[14px] leading-[18px] text-center mb-4">
+        Dodge the Creeps is a game I created using Godot. Despite having limited prior experience in game development, I successfully completed the project, which allowed me to learn and improve my skills significantly.
+      </p>
+      <div class="flex gap-4">
+        <a href="https://github.com/ochavillo234/Dodge-the-Creeps-" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Project 6 -->
+    <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+      <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+        <img src="Pictures/cms.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Curriculum Management System</h3>
+      <p class="text-gray-300 text-[13px] leading-[16px] text-center mb-4">
+        Curriculum Management System – Developed as our final semester project, this system streamlines academic curricula management. Built with React, Node.js, TailwindCSS, and a database backend.
+      </p>
+      <div class="flex gap-4">
+        <a href="https://github.com/belle-designer/CMS" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Project 7 -->
+    <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+      <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+        <img src="Pictures/ecom.jpg" alt="Project Seven" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Ecommerce</h3>
+      <p class="text-gray-300 text-[12px] leading-[16px] text-center mb-4">
+        Developed as our final semester project, this e-commerce platform allows users to browse products, add items to a cart, and complete purchases online. Built using React, Node.js, TailwindCSS, and a database backend.
+      </p>
+      <div class="flex gap-4">
+        <a href="https://github.com/ochavillo234/Ecommerce" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+        <a href="https://ecommerce-tau-dusky-46.vercel.app/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+      </div>
+    </div>
+
+    <!-- Project 8 -->
+    <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+      <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+        <img src="Pictures/POS.jpg" alt="Project Eight" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Coffee Shop POS</h3>
+      <p class="text-gray-300 text-[14px] leading-[17px] text-center mb-4">
+        A coffee shop POS system built as our final project. It allows users to browse menu items, place orders, and view order summaries, while administrators manage products and sales.
+      </p>
+      <div class="flex gap-4">
+        <a href="https://github.com/ochavillo234/CoffeeShop_POS" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Project 9 -->
+    <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+      <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+        <img src="Pictures/fiestahut.jpg" alt="Project Nine" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Fiesta Hut Enterprises</h3>
+      <p class="text-gray-300 text-[13px] leading-[18px] text-center mb-4">
+        I created this company website during OJT. Developed using HTML, TailwindCSS, and JavaScript, it provides a responsive and user-friendly online showcase of their products.
+      </p>
+      <div class="flex gap-4">
+        <a href="https://github.com/ochavillo234/FiestaHut" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+        <a href="https://fiestahut.vercel.app/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+      </div>
+    </div>
+
+    <!-- Project 10 -->
+    <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-4 shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
+      <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+        <img src="Pictures/3rdWeb.jpg" alt="Project Ten" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-[18px] font-bold neon-text mb-2 text-center">My Third Web Portfolio</h3>
+      <p class="text-gray-300 text-[14px] leading-[17px] text-center mb-4">
+        This is my third web portfolio, built with a high-tech design and advanced features, showcasing my growth in web development.
+      </p>
+      <div class="flex gap-4">
+        <a href="https://github.com/ochavillo234/My-Portfolio" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
+        <a href="https://deoport.vercel.app/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
+      </div>
+    </div>
+
   </div>
-</div>
-
-<!-- Project 2 -->
-<div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
-  <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
-    <img src="Pictures/1stWeb.jpg" alt="Project One" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-  </div>
-  <h3 class="text-[18px] font-bold neon-text mb-2 text-center">My First Web Portfolio</h3>
-  <p class="text-[14px] leading-[18px] text-gray-300 text-center mb-4">
-    This is my first-ever portfolio, built using HTML and CSS. Creating it helped me understand the fundamentals of web design, organize content effectively, and gain practical experience in building and styling responsive web pages. It was a great starting point for my journey in web development.
-  </p>
-
-  <div class="flex gap-4">
-    <a href="https://github.com/ochavillo234/WebDex" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
-    <a href="https://ochavillo234.github.io/WebDex/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
-  </div>
-</div>
-
-
-  <!-- Project 3 -->
-  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
-    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
-      <img src="Pictures/enrollment.jpg" alt="Project Three" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-    </div>
-    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Enrollment System</h3>
-    <p class="text-gray-300 text-[14px] leading-[18px] text-center mb-4">
-      A web-based enrollment for Cavite State University of Bacoor Campus system built using JavaScript, React, TailwindCSS, and Node.js. This system allows students to register, view available courses, and enroll in classes, while administrators can manage courses and monitor student enrollments
-    </p>
-    <div class="flex gap-4">
-      <a href="https://github.com/ochavillo234/ESG1" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
-    </div>
-  </div>
-
-  <!-- Project 4 -->
-  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
-    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
-      <img src="Pictures/2ndWeb.jpg" alt="Project Four" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-    </div>
-    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">My Second Web Portfolio</h3>
-    <p class="text-gray-300 text-[14px] leading-[18px] text-center mb-4">
-      This is my second web portfolio, created for our final semester project. It allowed me to test and showcase my improved skills since building my first portfolio. I built it using HTML, CSS, JavaScript, and TailwindCSS to create a responsive and modern web design.
-    </p>
-    <div class="flex gap-4">
-      <a href="https://github.com/ochavillo234/PortDeo" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
-      <a href="https://ochavillo234.github.io/PortDeo/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
-    </div>
-  </div>
-
-  <!-- Project 5 -->
-  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
-    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
-      <img src="Pictures/Dodge.jpg" alt="Project Five" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-    </div>
-    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Dodge the Creeps</h3>
-    <p class="text-gray-300 text-[14px] leading-[18px] text-center mb-4">
-      Dodge the Creeps is a game I created as our final semester project using Godot. Despite having limited prior experience in game development, I successfully completed the project, which allowed me to learn and improve my skills significantly.
-    </p>
-    <div class="flex gap-4">
-      <a href="https://github.com/ochavillo234/Dodge-the-Creeps-" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
-    </div>
-  </div>
-
-  <!-- Project 6 -->
-  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
-    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
-      <img src="Pictures/cms.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-    </div>
-    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Curriculum Management System</h3>
-    <p class="text-gray-300 text-[13px] leading-[16px] text-center mb-4">
-      Curriculum Management System – Developed as our final semester project, this system streamlines the management and organization of academic curricula. Built using React, Node.js, TailwindCSS, and a database backend, it allows administrators to easily create, update, and monitor courses, while providing students with an intuitive interface to view curriculum details.
-    </p>
-    <div class="flex gap-4">
-      <a href="https://github.com/belle-designer/CMS" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
-    </div>
-  </div>
-
-   <!-- Project 7 -->
-  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
-    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
-      <img src="Pictures/ecom.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-    </div>
-    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Ecommerce</h3>
-    <p class="text-gray-300 text-[12px] leading-[16px] text-center mb-4">
-      Developed as our final semester project, this web-based e-commerce platform allows users to browse products, add items to a cart, and complete purchases online. Built using React, Node.js, TailwindCSS, and a database backend, it features a responsive design, secure user authentication, and an admin panel for product and order management. This project demonstrates my skills in full-stack web development, UI/UX design, and e-commerce functionality.
-    </p>
-    <div class="flex gap-4">
-      <a href="https://github.com/ochavillo234/Ecommerce" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
-      <a href="https://ecommerce-tau-dusky-46.vercel.app/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
-    </div>
-  </div>
-
-   <!-- Project 8 -->
-  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
-    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
-      <img src="Pictures/POS.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-    </div>
-    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Coffee Shop POS</h3>
-    <p class="text-gray-300 text-[14px] leading-[17px] text-center mb-4">
-      Developed as our final semester project, this web application simulates a coffee shop management system it allows users to browse menu items, place orders, and view order summaries, while administrators can manage products and track sales. This project highlights my skills in full-stack web development, responsive design, and user-friendly interface
-    </p>
-    <div class="flex gap-4">
-      <a href="https://github.com/ochavillo234/CoffeeShop_POS" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
-  </div>
-</div>
-
-<!-- Project 9 -->
-  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
-    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
-      <img src="Pictures/fiestahut.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-    </div>
-    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">Fiesta Hut Enterprises</h3>
-    <p class="text-gray-300 text-[13px] leading-[18px] text-center mb-4">
-      I created this website for my company during my OJT, as they entrusted me to build an online platform to showcase their products. Developed using HTML, TailwindCSS, and JavaScript, the website features a responsive design, visually appealing layout, and user-friendly navigation, helping the company present their products effectively online.
-    </p>
-    <div class="flex gap-4">
-      <a href="https://github.com/ochavillo234/FiestaHut" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
-      <a href="https://fiestahut.vercel.app/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
-    </div>
-  </div>
-
-  <!-- Project 10 -->
-  <div class="backdrop-blur-md bg-white/5 border border-cyan-400 rounded-2xl p-[16px] shadow-lg hover:scale-105 transition-transform hover:shadow-cyan-500/50 flex flex-col items-center">
-    <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
-      <img src="Pictures/3rdWeb.jpg" alt="Project Six" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-    </div>
-    <h3 class="text-[18px] font-bold neon-text mb-2 text-center">My Thrird Web Portfolio</h3>
-    <p class="text-gray-300 text-[14px] leading-[17px] text-center mb-4">
-      This is my third web portfolio. It has been a while since I created my second portfolio, so I decided to build this one to see how much I have improved. I developed it with a high-tech design and advanced features, primarily for practice and experimentation, showcasing my growth in web development skills.
-    </p>
-    <div class="flex gap-4">
-      <a href="https://github.com/ochavillo234/My-Portfolio" target="_blank" class="text-cyan-400 font-semibold hover:underline">GitHub</a>
-      <a href="https://deoport.vercel.app/" target="_blank" class="text-purple-400 font-semibold hover:underline">Live Demo</a>
-    </div>
-  </div>
-
 </section>
+
+<script>
+  const projectsCanvas = document.getElementById("projects-bg");
+  const projectsCtx = projectsCanvas.getContext("2d");
+  let stars = [];
+  const numStars = 200;
+
+  function resizeProjectsCanvas() {
+    const section = document.getElementById("projects");
+    projectsCanvas.width = section.offsetWidth;
+    projectsCanvas.height = section.offsetHeight;
+    initStars();
+  }
+
+  function initStars() {
+    stars = [];
+    for (let i = 0; i < numStars; i++) {
+      stars.push({
+        x: Math.random() * projectsCanvas.width,
+        y: Math.random() * projectsCanvas.height,
+        radius: Math.random() * 2 + 1,
+        speed: Math.random() * 1 + 0.5,
+        alpha: Math.random()
+      });
+    }
+  }
+
+  function animateProjectsBackground() {
+    projectsCtx.clearRect(0, 0, projectsCanvas.width, projectsCanvas.height);
+    for (let star of stars) {
+      projectsCtx.beginPath();
+      projectsCtx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      projectsCtx.fillStyle = `rgba(0, 255, 255, ${star.alpha})`;
+      projectsCtx.fill();
+      star.y += star.speed;
+      if (star.y > projectsCanvas.height) {
+        star.y = 0;
+        star.x = Math.random() * projectsCanvas.width;
+      }
+    }
+    requestAnimationFrame(animateProjectsBackground);
+  }
+
+  window.addEventListener("resize", resizeProjectsCanvas);
+  resizeProjectsCanvas();
+  animateProjectsBackground();
+</script>
+
 
 
 <!-- ================= SKILLS SECTION ================= -->
-<section id="skills" class="py-28 mt-52 text-center relative overflow-hidden">
+<section id="skills" class="py-20 md:py-28 mt-32 md:mt-52 text-center relative overflow-hidden">
 
   <!-- Canvas for animated background -->
   <canvas id="skills-bg" class="absolute inset-0 -z-10 w-full h-full"></canvas>
 
-  <h2 class="text-4xl font-bold mb-16 neon-text">My Skills</h2>
+  <h2 class="text-3xl md:text-4xl font-bold mb-12 md:mb-16 neon-text">My Skills</h2>
 
-  <div class="max-w-5xl mx-auto px-6 space-y-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 space-y-16 md:space-y-20">
 
     <!-- Frontend -->
     <div>
-      <h3 class="text-2xl font-semibold neon-text mb-10 text-center">FRONTEND DEVELOPMENT</h3>
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
-        <div class="w-36">
-          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+      <h3 class="text-xl md:text-2xl font-semibold neon-text mb-6 md:mb-10 text-center">FRONTEND DEVELOPMENT</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6 justify-items-center">
+        <!-- Each skill card -->
+        <div class="w-28 sm:w-32 md:w-36">
+          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-28 sm:h-32 md:h-36">
             <img src="Pictures/Html.jpg" alt="HTML" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">HTML</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">HTML</p>
         </div>
-        <div class="w-36">
-          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <div class="w-28 sm:w-32 md:w-36">
+          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-28 sm:h-32 md:h-36">
             <img src="Pictures/css.jpg" alt="CSS" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">CSS</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">CSS</p>
         </div>
-        <div class="w-36">
-          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <div class="w-28 sm:w-32 md:w-36">
+          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-28 sm:h-32 md:h-36">
             <img src="Pictures/js.jpg" alt="JavaScript" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">JavaScript</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">JavaScript</p>
         </div>
-        <div class="w-36">
-          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <div class="w-28 sm:w-32 md:w-36">
+          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-28 sm:h-32 md:h-36">
             <img src="Pictures/react.jpg" alt="React" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">React</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">React</p>
         </div>
-        <div class="w-36">
-          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <div class="w-28 sm:w-32 md:w-36">
+          <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-28 sm:h-32 md:h-36">
             <img src="Pictures/tailwind.jpg" alt="Tailwind" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">Tailwind</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">Tailwind</p>
         </div>
       </div>
     </div>
 
     <!-- Backend -->
     <div>
-      <h3 class="text-2xl font-semibold neon-text mb-10 text-center">BACKEND DEVELOPMENT</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="w-36">
-          <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+      <h3 class="text-xl md:text-2xl font-semibold neon-text mb-6 md:mb-10 text-center">BACKEND DEVELOPMENT</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 justify-items-center">
+        <div class="w-28 sm:w-32 md:w-36">
+          <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-28 sm:h-32 md:h-36">
             <img src="Pictures/node.jpg" alt="Node.js" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">Node.js</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">Node.js</p>
         </div>
-        <div class="w-36">
-          <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <div class="w-28 sm:w-32 md:w-36">
+          <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-28 sm:h-32 md:h-36">
             <img src="Pictures/express.jpg" alt="Express" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">Express</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">Express</p>
         </div>
-        <div class="w-36">
-          <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <div class="w-28 sm:w-32 md:w-36">
+          <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-28 sm:h-32 md:h-36">
             <img src="Pictures/js.jpg" alt="JavaScript" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">JavaScript</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">JavaScript</p>
         </div>
-        <div class="w-36">
-          <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <div class="w-28 sm:w-32 md:w-36">
+          <div class="bg-black/40 border border-purple-400 rounded-xl overflow-hidden hover:scale-105 transition h-28 sm:h-32 md:h-36">
             <img src="Pictures/python.jpg" alt="Python" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">Python</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">Python</p>
         </div>
       </div>
     </div>
 
     <!-- Database -->
     <div>
-      <h3 class="text-2xl font-semibold neon-text mb-10 text-center">DATABASE</h3>
-      <div class="flex justify-center gap-6">
-        <div class="w-36">
-          <div class="bg-black/40 border border-pink-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+      <h3 class="text-xl md:text-2xl font-semibold neon-text mb-6 md:mb-10 text-center">DATABASE</h3>
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+        <div class="w-28 sm:w-32 md:w-36">
+          <div class="bg-black/40 border border-pink-400 rounded-xl overflow-hidden hover:scale-105 transition h-28 sm:h-32 md:h-36">
             <img src="Pictures/sqll.jpg" alt="MySQL" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">MySQL</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">MySQL</p>
         </div>
-        <div class="w-36">
-          <div class="bg-black/40 border border-pink-400 rounded-xl overflow-hidden hover:scale-105 transition h-36">
+        <div class="w-28 sm:w-32 md:w-36">
+          <div class="bg-black/40 border border-pink-400 rounded-xl overflow-hidden hover:scale-105 transition h-28 sm:h-32 md:h-36">
             <img src="Pictures/db.jpg" alt="MongoDB" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">MongoDB</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">MongoDB</p>
         </div>
       </div>
     </div>
 
     <!-- Soft Skills -->
     <div>
-      <h3 class="text-2xl font-semibold neon-text mb-10 text-center">SOFT SKILLS</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center mx-auto max-w-6xl">
-        <!-- Row 1 -->
-        <div class="w-44">
-          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+      <h3 class="text-xl md:text-2xl font-semibold neon-text mb-6 md:mb-10 text-center">SOFT SKILLS</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-8 justify-items-center mx-auto max-w-6xl">
+        <!-- Each soft skill -->
+        <div class="w-32 sm:w-40 md:w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-32 sm:h-40 md:h-44">
             <img src="Pictures/Problem Solving.png" alt="Problem-Solving" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">Problem-Solving</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">Problem-Solving</p>
         </div>
-
-        <div class="w-44">
-          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <div class="w-32 sm:w-40 md:w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-32 sm:h-40 md:h-44">
             <img src="Pictures/Team Workk.png" alt="Teamwork" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">Teamwork</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">Teamwork</p>
         </div>
-
-        <div class="w-44">
-          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <div class="w-32 sm:w-40 md:w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-32 sm:h-40 md:h-44">
             <img src="Pictures/Adapt.png" alt="Adaptability" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">Adaptability</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">Adaptability</p>
         </div>
-
-        <div class="w-44">
-          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <div class="w-32 sm:w-40 md:w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-32 sm:h-40 md:h-44">
             <img src="Pictures/Creat.png" alt="Creativity" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">Creativity</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">Creativity</p>
         </div>
-
-        <!-- Row 2 -->
-        <div class="w-44">
-          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <div class="w-32 sm:w-40 md:w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-32 sm:h-40 md:h-44">
             <img src="Pictures/Speech.png" alt="Communication" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">Communication</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">Communication</p>
         </div>
-
-        <div class="w-44">
-          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <div class="w-32 sm:w-40 md:w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-32 sm:h-40 md:h-44">
             <img src="Pictures/Leader.png" alt="Leadership" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">Leadership</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">Leadership</p>
         </div>
-
-        <div class="w-44">
-          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <div class="w-32 sm:w-40 md:w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-32 sm:h-40 md:h-44">
             <img src="Pictures/Time.png" alt="Time Management" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">Time Management</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">Time Management</p>
         </div>
-
-        <div class="w-44">
-          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <div class="w-32 sm:w-40 md:w-44">
+          <div class="bg-black/40 border border-green-400 rounded-xl overflow-hidden hover:scale-105 transition h-32 sm:h-40 md:h-44">
             <img src="Pictures/Multi.png" alt="Multitasking" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">Multitasking</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">Multitasking</p>
         </div>
       </div>
     </div>
 
     <!-- Gaming Skills -->
     <div>
-      <h3 class="text-2xl font-semibold neon-text mb-10 text-center">GAMING HIGHLIGHTS<br>(Click it)</h3>
-      <div class="flex justify-center gap-8 flex-wrap">
-        <!-- League of Legends -->
-        <div class="w-44 cursor-pointer" onclick="openHighlights('lol')">
-          <div class="bg-black/40 border border-yellow-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+      <h3 class="text-xl md:text-2xl font-semibold neon-text mb-6 md:mb-10 text-center">GAMING HIGHLIGHTS<br class="hidden md:block">(Click it)</h3>
+      <div class="flex justify-center gap-4 md:gap-8 flex-wrap">
+        <div class="w-32 sm:w-40 md:w-44 cursor-pointer" onclick="openHighlights('lol')">
+          <div class="bg-black/40 border border-yellow-400 rounded-xl overflow-hidden hover:scale-105 transition h-32 sm:h-40 md:h-44">
             <img src="Pictures/lol.jpg" alt="League of Legends" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">League of Legends</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">League of Legends</p>
         </div>
-
-        <!-- Mobile Legends -->
-        <div class="w-44 cursor-pointer" onclick="openHighlights('ml')">
-          <div class="bg-black/40 border border-yellow-400 rounded-xl overflow-hidden hover:scale-105 transition h-44">
+        <div class="w-32 sm:w-40 md:w-44 cursor-pointer" onclick="openHighlights('ml')">
+          <div class="bg-black/40 border border-yellow-400 rounded-xl overflow-hidden hover:scale-105 transition h-32 sm:h-40 md:h-44">
             <img src="Pictures/ml.jpg" alt="Mobile Legends" class="w-full h-full object-cover">
           </div>
-          <p class="text-sm mt-2 text-center neon-text">Mobile Legends</p>
+          <p class="text-xs sm:text-sm mt-2 text-center neon-text">Mobile Legends</p>
         </div>
       </div>
     </div>
@@ -670,7 +762,7 @@ body {
 const skillsCanvas = document.getElementById('skills-bg');
 const skillsCtx = skillsCanvas.getContext('2d');
 
-// Set canvas full size
+// Resize canvas dynamically
 function resizeSkillsCanvas() {
   skillsCanvas.width = skillsCanvas.offsetWidth;
   skillsCanvas.height = skillsCanvas.offsetHeight;
@@ -680,10 +772,7 @@ resizeSkillsCanvas();
 
 // Particle class
 class SkillParticle {
-  constructor() {
-    this.initialize();
-  }
-
+  constructor() { this.initialize(); }
   initialize() {
     this.posX = Math.random() * skillsCanvas.width;
     this.posY = Math.random() * skillsCanvas.height;
@@ -696,27 +785,16 @@ class SkillParticle {
     this.expanding = true;
     this.glowColor = `hsl(${Math.random() * 360}, 100%, ${50 + Math.random() * 30}%)`;
   }
-
   move() {
     this.posX += this.velX;
     this.posY += this.velY;
-
-    // Wrap around edges
     if (this.posX > skillsCanvas.width) this.posX = 0;
     if (this.posX < 0) this.posX = skillsCanvas.width;
     if (this.posY > skillsCanvas.height) this.posY = 0;
     if (this.posY < 0) this.posY = skillsCanvas.height;
-
-    // Pulsing effect
-    if (this.expanding) {
-      this.radius += this.pulseSpeed;
-      if (this.radius >= this.maxRadius) this.expanding = false;
-    } else {
-      this.radius -= this.pulseSpeed;
-      if (this.radius <= this.minRadius) this.expanding = true;
-    }
+    if (this.expanding) { this.radius += this.pulseSpeed; if (this.radius >= this.maxRadius) this.expanding = false; }
+    else { this.radius -= this.pulseSpeed; if (this.radius <= this.minRadius) this.expanding = true; }
   }
-
   draw() {
     skillsCtx.beginPath();
     skillsCtx.arc(this.posX, this.posY, this.radius, 0, Math.PI * 2);
@@ -727,14 +805,14 @@ class SkillParticle {
   }
 }
 
-// Create particles
+// Particles setup
 const skillParticlesArray = [];
-const TOTAL_SKILL_PARTICLES = 120; // Adjust for performance
+const TOTAL_SKILL_PARTICLES = window.innerWidth < 640 ? 60 : 120; // fewer particles on mobile
 for (let i = 0; i < TOTAL_SKILL_PARTICLES; i++) {
   skillParticlesArray.push(new SkillParticle());
 }
 
-// Draw connecting lines
+// Connect particles
 function connectSkillParticles() {
   for (let i = 0; i < skillParticlesArray.length; i++) {
     for (let j = i + 1; j < skillParticlesArray.length; j++) {
@@ -756,44 +834,44 @@ function connectSkillParticles() {
 // Animation loop
 function animateSkillParticles() {
   skillsCtx.clearRect(0, 0, skillsCanvas.width, skillsCanvas.height);
-
-  skillParticlesArray.forEach(p => {
-    p.move();
-    p.draw();
-  });
-
+  skillParticlesArray.forEach(p => { p.move(); p.draw(); });
   connectSkillParticles();
-
   requestAnimationFrame(animateSkillParticles);
 }
-
 animateSkillParticles();
 </script>
 
+
 <!-- Highlights Modal -->
-<div id="highlights-modal" class="hidden fixed inset-0 bg-black/80 flex justify-center items-center z-50">
-  <div class="bg-black p-6 rounded-xl max-w-4xl w-full">
-    <h4 class="text-xl font-semibold neon-text text-center mb-6">Highlights</h4>
-    <div id="highlights-boxes" class="flex justify-center gap-6 flex-wrap">
-      <!-- highlight boxes will be inserted here -->
+<div id="highlights-modal" class="hidden fixed inset-0 bg-black/80 flex justify-center items-center z-50 p-4">
+  <div class="bg-black p-6 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative z-50">
+    <h4 class="text-lg md:text-xl font-semibold neon-text text-center mb-6">Highlights</h4>
+    
+    <!-- Custom Layout -->
+    <div id="highlights-boxes" class="grid gap-10 justify-items-center">
+      <!-- boxes will be inserted here -->
     </div>
-    <button onclick="closeHighlights()" class="mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 block mx-auto">Close</button>
+
+    <button onclick="closeHighlights()" class="mt-10 bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 block mx-auto text-sm md:text-base relative z-50">
+      Close
+    </button>
   </div>
 </div>
 
 <!-- Video Modal -->
-<div id="video-modal" class="hidden fixed inset-0 bg-black/90 flex justify-center items-center z-50">
-  <div class="bg-black p-4 rounded-xl max-w-3xl w-full">
+<div id="video-modal" class="hidden fixed inset-0 bg-black/90 flex justify-center items-center z-50 p-4">
+  <div class="bg-black p-4 rounded-xl max-w-3xl w-full relative z-50">
     <video id="highlight-video" controls autoplay class="w-full rounded-lg">
       <source src="" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <button onclick="closeVideo()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
+    <button onclick="closeVideo()" class="mt-6 bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 block mx-auto">
+      Close
+    </button>
   </div>
 </div>
 
 <script>
-  // Example highlights per game
   const highlights = {
     lol: [
       { img: "Pictures/zed.jpg", video: "Video/Zedmontage.webm", title: "Zed Montage" },
@@ -809,26 +887,43 @@ animateSkillParticles();
 
   function openHighlights(game) {
     const container = document.getElementById("highlights-boxes");
-    container.innerHTML = ""; // Clear old highlights
+    container.innerHTML = "";
 
-    highlights[game].forEach(h => {
-      const box = document.createElement("div");
-      box.className = "w-40 cursor-pointer";
-      box.innerHTML = `
-        <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition h-40">
-          <img src="${h.img}" alt="${h.title}" class="w-full h-full object-cover">
-        </div>
-        <p class="text-sm mt-2 text-center neon-text">${h.title}</p>
-      `;
-      box.onclick = () => playVideo(h.video);
-      container.appendChild(box);
-    });
+    const items = highlights[game];
+
+    // Top row: 2 pictures
+    const topRow = document.createElement("div");
+    topRow.className = "grid grid-cols-2 gap-10 w-full justify-items-center";
+    topRow.appendChild(createHighlightBox(items[0]));
+    topRow.appendChild(createHighlightBox(items[1]));
+    container.appendChild(topRow);
+
+    // Bottom row: 1 picture centered
+    const bottomRow = document.createElement("div");
+    bottomRow.className = "flex justify-center w-full mt-10";
+    bottomRow.appendChild(createHighlightBox(items[2]));
+    container.appendChild(bottomRow);
 
     document.getElementById("highlights-modal").classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  }
+
+  function createHighlightBox(h) {
+    const box = document.createElement("div");
+    box.className = "w-32 h-32 md:w-44 md:h-44 cursor-pointer flex flex-col items-center";
+    box.innerHTML = `
+      <div class="bg-black/40 border border-cyan-400 rounded-xl overflow-hidden hover:scale-105 transition w-full h-full">
+        <img src="${h.img}" alt="${h.title}" class="w-full h-full object-cover">
+      </div>
+      <p class="text-xs md:text-sm mt-4 text-center neon-text">${h.title}</p>
+    `;
+    box.onclick = () => playVideo(h.video);
+    return box;
   }
 
   function closeHighlights() {
     document.getElementById("highlights-modal").classList.add("hidden");
+    document.body.style.overflow = "";
   }
 
   function playVideo(src) {
@@ -839,6 +934,7 @@ animateSkillParticles();
     video.load();
     video.play();
     videoModal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
   }
 
   function closeVideo() {
@@ -847,27 +943,34 @@ animateSkillParticles();
 
     video.pause();
     videoModal.classList.add("hidden");
+    document.body.style.overflow = "";
   }
 </script>
+
 
   </div>
 </section>
 
 
 <!-- ===================== RESUME ===================== -->
-<section id="resume" class="pt-32 pb-16 flex justify-center relative">
-  <div class="bg-black/40 border border-cyan-400 rounded-2xl p-8 shadow-neon max-w-md w-full text-center">
+<section id="resume" class="pt-32 pb-16 flex justify-center relative overflow-hidden">
+  <div class="bg-black/40 border border-cyan-400 rounded-2xl p-6 md:p-8 shadow-neon max-w-md w-full text-center z-10">
     
     <!-- Resume Label -->
-    <p class="text-gray-300 mb-4 text-lg font-semibold">Want to view or download my resume?</p>
+    <p class="text-gray-300 mb-4 text-base md:text-lg font-semibold">
+      Want to view or download my resume?
+    </p>
     
     <!-- Resume Button -->
-    <a href="Pictures/Dexter Resume.pdf" download class="inline-block px-8 py-3 bg-black/80 border border-cyan-400 text-cyan-400 font-bold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 neon-button">
+    <a href="Pictures/Dexter Resume.pdf" download 
+       class="inline-block px-6 md:px-8 py-2.5 md:py-3 bg-black/80 border border-cyan-400 text-cyan-400 font-bold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 neon-button text-sm md:text-base">
       Download Resume
     </a>
     
     <!-- Description -->
-    <p class="text-gray-400 mt-4 text-sm">Click the button above to download my resume in PDF format.</p>
+    <p class="text-gray-400 mt-4 text-xs md:text-sm">
+      Click the button above to download my resume in PDF format.
+    </p>
   </div>
 </section>
 
@@ -883,6 +986,12 @@ animateSkillParticles();
   .shadow-neon {
     box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 30px #00fff7;
   }
+  /* Ensure the canvas stays full section */
+  #resume-bg {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
 </style>
 
 <script>
@@ -893,7 +1002,7 @@ resumeCanvas.style.top = '0';
 resumeCanvas.style.left = '0';
 resumeCanvas.style.width = '100%';
 resumeCanvas.style.height = '100%';
-resumeCanvas.style.zIndex = '-10';
+resumeCanvas.style.zIndex = '-1';
 resumeCanvas.style.pointerEvents = 'none';
 document.querySelector('#resume').appendChild(resumeCanvas);
 
@@ -922,24 +1031,21 @@ class ResumeParticle {
     this.velY = (Math.random() - 0.5) * 0.2;
     this.pulseSpeed = Math.random() * 0.03 + 0.01;
     this.expanding = true;
-    this.color = `hsl(${200 + Math.random() * 60}, 100%, ${50 + Math.random() * 25}%)`; // Cyan-purple tones
-    this.angle = Math.random() * Math.PI * 2; // For wavy motion
+    this.color = `hsl(${200 + Math.random() * 60}, 100%, ${50 + Math.random() * 25}%)`; 
+    this.angle = Math.random() * Math.PI * 2; 
     this.waveSpeed = Math.random() * 0.03 + 0.01;
   }
 
   update() {
-    // Float
     this.rx += this.velX + Math.sin(this.angle) * 0.5;
     this.ry += this.velY + Math.cos(this.angle) * 0.5;
     this.angle += this.waveSpeed;
 
-    // Wrap edges
     if (this.rx > resumeCanvas.width) this.rx = 0;
     if (this.rx < 0) this.rx = resumeCanvas.width;
     if (this.ry > resumeCanvas.height) this.ry = 0;
     if (this.ry < 0) this.ry = resumeCanvas.height;
 
-    // Pulsing
     if (this.expanding) {
       this.radius += this.pulseSpeed;
       if (this.radius >= this.maxRadius) this.expanding = false;
@@ -961,12 +1067,11 @@ class ResumeParticle {
 
 // Create particles
 const resumeParticlesArray = [];
-const RESUME_PARTICLE_COUNT = 100;
+let RESUME_PARTICLE_COUNT = window.innerWidth < 640 ? 50 : 100; // fewer particles on mobile
 for (let i = 0; i < RESUME_PARTICLE_COUNT; i++) {
   resumeParticlesArray.push(new ResumeParticle());
 }
 
-// Draw connecting wavy lines
 function drawResumeConnections() {
   for (let i = 0; i < resumeParticlesArray.length; i++) {
     for (let j = i + 1; j < resumeParticlesArray.length; j++) {
@@ -985,20 +1090,15 @@ function drawResumeConnections() {
   }
 }
 
-// Animation loop
 function animateResumeBG() {
   resumeCtx.clearRect(0, 0, resumeCanvas.width, resumeCanvas.height);
-
   resumeParticlesArray.forEach(p => {
     p.update();
     p.draw();
   });
-
   drawResumeConnections();
-
   requestAnimationFrame(animateResumeBG);
 }
-
 animateResumeBG();
 </script>
 
@@ -1281,7 +1381,7 @@ animateGalaxy();
   <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
 
     <!-- Left: Neon Navigation Buttons -->
-    <div class="flex flex-wrap justify-center md:justify-start gap-4 w-full max-w-full">
+    <div class="flex flex-wrap justify-center md:justify-start gap-4 w-full max-w-full text-center">
       <a href="#home" class="footer-btn">Home</a>
       <a href="#about" class="footer-btn">About</a>
       <a href="#projects" class="footer-btn">Projects</a>
@@ -1293,19 +1393,19 @@ animateGalaxy();
     <!-- Right: Social Icons -->
     <div class="flex justify-center md:justify-end gap-6">
       <a href="https://www.facebook.com/dexterochavillooo/" target="_blank" class="social-icon">
-        <img src="Pictures/fb.jpg" alt="Facebook" class="w-10 h-10 object-cover">
+        <img src="Pictures/fb.jpg" alt="Facebook" class="w-10 h-10 object-cover rounded-full shadow-neon transition-transform duration-300 hover:scale-110">
       </a>
       <a href="https://www.instagram.com/d_eochavillo/" target="_blank" class="social-icon">
-        <img src="Pictures/insta.jpg" alt="Instagram" class="w-10 h-10 object-cover">
+        <img src="Pictures/insta.jpg" alt="Instagram" class="w-10 h-10  object-cover rounded-full shadow-neon transition-transform duration-300 hover:scale-110">
       </a>
       <a href="https://github.com/ochavillo234" target="_blank" class="social-icon">
-        <img src="Pictures/github.jpg" alt="GitHub" class="w-10 h-10 object-cover">
+        <img src="Pictures/github.jpg" alt="GitHub" class="w-10 h-10 object-cover rounded-full shadow-neon transition-transform duration-300 hover:scale-110">
       </a>
     </div>
   </div>
 
   <!-- Bottom: Copyright + Neon Glow -->
-  <div class="mt-10 text-center">
+  <div class="mt-10 text-center px-4">
     <p class="text-lg font-semibold text-cyan-400 neon-text mb-3">
       &copy; 2025 Deo デオ. All Rights Reserved.
     </p>
